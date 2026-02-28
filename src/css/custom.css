@@ -78,3 +78,13 @@
 [data-theme='dark'] .grammatical-term-sanskrit {
   color: #88b4ff;
 }
+
+/* Sanskrit text shorthand styling */
+.sanskrit-text {
+  color: #2e5090;
+  font-weight: 500;
+}
+
+[data-theme='dark'] .sanskrit-text {
+  color: #88b4ff;
+}
