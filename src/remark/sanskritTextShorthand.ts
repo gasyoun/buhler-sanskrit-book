@@ -1,5 +1,5 @@
 import Sanscript from '@indic-transliteration/sanscript';
-import {createShorthandPlugin, makeTextSpan, type MdxNode} from './grammaticalTermShorthand';
+import {createShorthandPlugin, makeTextSpan, type MdxNode} from './shorthand';
 
 function makeSanskritTextSpan(term: string): MdxNode {
     const eqIndex = term.indexOf('=');

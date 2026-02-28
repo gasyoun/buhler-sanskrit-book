@@ -1,5 +1,5 @@
 import Sanscript from '@indic-transliteration/sanscript';
-import {createShorthandPlugin, type MdxNode} from './grammaticalTermShorthand';
+import {createShorthandPlugin, type MdxNode} from './shorthand';
 
 function makeSanskritTermSpan(slp1Term: string): MdxNode {
     const devanagari = Sanscript.t(slp1Term, 'slp1', 'devanagari');
