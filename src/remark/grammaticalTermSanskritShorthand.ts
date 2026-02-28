@@ -11,7 +11,7 @@ function makeSanskritTermSpan(slp1Term: string): MdxNode {
             {type: 'mdxJsxAttribute', name: 'className', value: 'grammatical-term-sanskrit'},
         ],
         children: [
-            {type: 'text', value: `${devanagari} (${iast})`},
+            {type: 'text', value: `${devanagari}\u00A0(${iast})`},
         ],
     };
 }

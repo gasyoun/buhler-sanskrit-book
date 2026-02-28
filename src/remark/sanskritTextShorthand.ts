@@ -7,11 +7,11 @@ function makeSanskritTextSpan(term: string): MdxNode {
         const slp1Part = term.slice(0, eqIndex);
         const translationPart = term.slice(eqIndex + 1);
         const devanagari = Sanscript.t(slp1Part, 'slp1', 'devanagari');
-        return makeTextSpan('sanskrit-text', `${devanagari} (${translationPart})`);
+        return makeTextSpan('sanskrit-text', `${devanagari}\u00A0(${translationPart})`);
     } else {
         const devanagari = Sanscript.t(term, 'slp1', 'devanagari');
         const iast = Sanscript.t(term, 'slp1', 'iast');
-        return makeTextSpan('sanskrit-text', `${devanagari} (${iast})`);
+        return makeTextSpan('sanskrit-text', `${devanagari}\u00A0(${iast})`);
     }
 }
 
