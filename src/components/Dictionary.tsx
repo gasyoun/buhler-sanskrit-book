@@ -1,5 +1,6 @@
 import React from 'react';
 import Papa from 'papaparse';
+import Sanscript from '@indic-transliteration/sanscript';
 
 import verbDictionary from '../dictionary/verb.tsv';
 import nounDictionary from '../dictionary/noun.tsv';
@@ -75,22 +76,18 @@ const Dictionary: React.FC<DictionaryProps> = ({name, lesson, tag, format}) => {
         return <div>No entries found for {filterMessage}</div>;
     }
 
-    const getMainColumns = () => {
-        switch (name) {
-            case 'verb':
-                return {sanskrit: 'root', translation: 'translation'};
-            case 'noun':
-                return {sanskrit: 'word', translation: 'translation'};
-            case 'adjective':
-                return {sanskrit: 'word', translation: 'translation'};
-            case 'other':
-                return {sanskrit: 'entity', translation: 'translation'};
-            default:
-                return {sanskrit: 'root', translation: 'translation'};
-        }
-    };
+    const sanskritColumns = ['root', 'stem', 'word', 'entity'];
 
-    const {sanskrit: sanskritColumn} = getMainColumns();
+    const renderSanskritValue = (value: string, key: string) => {
+        const devanagari = Sanscript.t(value, 'slp1', 'devanagari');
+        const iast = Sanscript.t(value, 'slp1', 'iast');
+        return (
+            <span key={key}>
+                <span className="sanscript-text" style={{color: '#88b4ff', fontWeight: '500'}}>{devanagari}</span>
+                {' '}({iast})
+            </span>
+        );
+    };
 
     const renderFormattedEntry = (entry: Record<string, string>, formatString: string) => {
         const placeholderRegex = /\$([a-zA-Z0-9_]+)/g;
@@ -113,12 +110,8 @@ const Dictionary: React.FC<DictionaryProps> = ({name, lesson, tag, format}) => {
                 }
             }
 
-            if (columnName === sanskritColumn) {
-                parts.push(
-                    <span key={`placeholder-${parts.length}`} style={{color: '#88b4ff', fontWeight: '500'}}>
-                        {value}
-                    </span>
-                );
+            if (sanskritColumns.includes(columnName) && value) {
+                parts.push(renderSanskritValue(value, `placeholder-${parts.length}`));
             } else {
                 parts.push(
                     <span key={`placeholder-${parts.length}`} style={{color: 'inherit'}}>
