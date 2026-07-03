@@ -21,11 +21,11 @@
 
 ## Охват
 
-Оцифровано **40 из 48 уроков** —
+Оцифровано **44 из 48 уроков** —
 [`docs/lesson1.mdx`](https://github.com/alexander-myltsev/buhler-sanskrit-book/blob/main/docs/lesson1.mdx) …
-[`docs/lesson40.mdx`](https://github.com/alexander-myltsev/buhler-sanskrit-book/blob/main/docs/lesson40.mdx)
+[`docs/lesson44.mdx`](https://github.com/alexander-myltsev/buhler-sanskrit-book/blob/main/docs/lesson44.mdx)
 плюс [`docs/intro.mdx`](https://github.com/alexander-myltsev/buhler-sanskrit-book/blob/main/docs/intro.mdx).
-Уроки 41–48 пока не оцифрованы.
+Уроки 45–48 пока не оцифрованы.
 
 Словарь к упражнениям — четыре TSV-файла (глаголы / существительные / прилагательные /
 прочее) в [`src/dictionary/`](https://github.com/alexander-myltsev/buhler-sanskrit-book/tree/main/src/dictionary),
