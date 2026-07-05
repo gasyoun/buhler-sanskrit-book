@@ -4,6 +4,7 @@ import type * as Preset from '@docusaurus/preset-classic';
 import grammaticalTermShorthand from './src/remark/grammaticalTermShorthand';
 import grammaticalTermSanskritShorthand from './src/remark/grammaticalTermSanskritShorthand';
 import sanskritTextShorthand from './src/remark/sanskritTextShorthand';
+import remarkRstTable from './src/remark/rstTable';
 
 // This runs in Node.js - Don't use client-side code here (browser APIs, JSX...)
 
@@ -74,7 +75,7 @@ const config: Config = {
       {
         docs: {
           sidebarPath: './sidebars.ts',
-          remarkPlugins: [grammaticalTermShorthand, grammaticalTermSanskritShorthand, sanskritTextShorthand],
+          remarkPlugins: [remarkRstTable, grammaticalTermShorthand, grammaticalTermSanskritShorthand, sanskritTextShorthand],
           editUrl:
             'https://github.com/alexander-myltsev/buhler-sanskrit-book/tree/main/',
         },
