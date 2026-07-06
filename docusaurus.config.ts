@@ -1,5 +1,5 @@
-import {themes as prismThemes} from 'prism-react-renderer';
-import type {Config} from '@docusaurus/types';
+import { themes as prismThemes } from 'prism-react-renderer';
+import type { Config } from '@docusaurus/types';
 import type * as Preset from '@docusaurus/preset-classic';
 import grammaticalTermShorthand from './src/remark/grammaticalTermShorthand';
 import grammaticalTermSanskritShorthand from './src/remark/grammaticalTermSanskritShorthand';
@@ -10,7 +10,8 @@ import remarkRstTable from './src/remark/rstTable';
 
 const config: Config = {
   title: 'Санскрит: элементарный курс Бюлера — упражнения',
-  tagline: 'Электронное издание упражнений из учебника Г. Бюлера (Стокгольм, 1923)',
+  tagline:
+    'Электронное издание упражнений из учебника Г. Бюлера (Стокгольм, 1923)',
   favicon: 'img/favicon.ico',
 
   // Future flags, see https://docusaurus.io/docs/api/docusaurus-config#future
@@ -40,6 +41,9 @@ const config: Config = {
     locales: ['ru'],
   },
 
+  // Turns each top-level docs content block into a citable #block-N anchor.
+  clientModules: ['./src/clientModules/citationBlocks.ts'],
+
   plugins: [
     function tsvLoaderPlugin() {
       return {
@@ -61,12 +65,15 @@ const config: Config = {
   ],
 
   themes: [
-    ['@easyops-cn/docusaurus-search-local', {
-      hashed: true,
-      language: ['ru', 'en'],
-      indexBlog: false,
-      removeDefaultStopWordFilter: true,
-    }],
+    [
+      '@easyops-cn/docusaurus-search-local',
+      {
+        hashed: true,
+        language: ['ru', 'en'],
+        indexBlog: false,
+        removeDefaultStopWordFilter: true,
+      },
+    ],
   ],
 
   presets: [
@@ -75,7 +82,12 @@ const config: Config = {
       {
         docs: {
           sidebarPath: './sidebars.ts',
-          remarkPlugins: [remarkRstTable, grammaticalTermShorthand, grammaticalTermSanskritShorthand, sanskritTextShorthand],
+          remarkPlugins: [
+            remarkRstTable,
+            grammaticalTermShorthand,
+            grammaticalTermSanskritShorthand,
+            sanskritTextShorthand,
+          ],
           editUrl:
             'https://github.com/alexander-myltsev/buhler-sanskrit-book/tree/main/',
         },

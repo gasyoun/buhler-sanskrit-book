@@ -102,33 +102,39 @@
 }
 
 /*
- * Citation line numbers (issue #5).
- * Every top-level content block of a docs page (paragraph, Sanskrit
- * sentence block, table, list) gets a small counter in the left margin,
- * so a passage can be cited as «урок 3, блок 12». Pure CSS counters:
- * no markup changes, numbers are not copied with the text. Shown only
- * where the margin exists (desktop layout).
+ * Citation block anchors (issue #5).
+ * src/clientModules/citationBlocks.ts gives every top-level content block of a
+ * docs page (paragraph, Sanskrit sentence block, table, list) an id (block-N)
+ * and injects a small clickable number in the left margin, so a passage can be
+ * linked/cited by URL as «.../lesson3#block-12». Numbers are shown only on
+ * desktop, where the margin exists; hidden on narrow screens.
  */
+.theme-doc-markdown > .cited-block {
+  scroll-margin-top: calc(var(--ifm-navbar-height, 3.75rem) + 1rem);
+}
+
+/*
+ * Highlight the block you followed a citation link to. Driven by a JS-added
+ * class (not :target), because :target is not re-evaluated when the block id is
+ * assigned after page load. Works on all viewport widths.
+ */
+.theme-doc-markdown > .cited-block.block-target {
+  outline: 2px solid var(--ifm-color-primary-lighter);
+  outline-offset: 4px;
+  border-radius: 2px;
+}
+
+.block-number {
+  display: none;
+}
+
 @media (min-width: 997px) {
-  .theme-doc-markdown {
-    counter-reset: content-block;
-  }
-
-  .theme-doc-markdown > p,
-  .theme-doc-markdown > .sanscript-text,
-  .theme-doc-markdown > table,
-  .theme-doc-markdown > ul,
-  .theme-doc-markdown > ol {
+  .theme-doc-markdown > .cited-block {
     position: relative;
-    counter-increment: content-block;
   }
 
-  .theme-doc-markdown > p::before,
-  .theme-doc-markdown > .sanscript-text::before,
-  .theme-doc-markdown > table::before,
-  .theme-doc-markdown > ul::before,
-  .theme-doc-markdown > ol::before {
-    content: counter(content-block);
+  .block-number {
+    display: block;
     position: absolute;
     left: -2.8em;
     top: 0.2em;
@@ -138,6 +144,14 @@
     font-style: normal;
     font-weight: 400;
     color: var(--ifm-color-emphasis-400);
+    text-decoration: none;
     user-select: none;
+    transition: color 0.15s ease;
+  }
+
+  .block-number:hover,
+  .block-number:focus {
+    color: var(--ifm-color-primary);
+    text-decoration: none;
   }
 }
