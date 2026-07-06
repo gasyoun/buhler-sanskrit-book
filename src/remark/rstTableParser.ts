@@ -19,7 +19,7 @@ export function parseRstGridTable(source: string): RstTableModel {
   const lines = source.replace(/\s+$/, '').split('\n');
   while (lines.length && lines[0].trim() === '') lines.shift();
   while (lines.length && lines[lines.length - 1].trim() === '') lines.pop();
-  if (lines.length === 0) return {headerRows: [], bodyRows: []};
+  if (lines.length === 0) return { headerRows: [], bodyRows: [] };
   const width = Math.max(...lines.map((l) => l.length));
   const grid = lines.map((l) => l.padEnd(width, ' '));
 
@@ -53,7 +53,11 @@ export function parseRstGridTable(source: string): RstTableModel {
 
   // A vertical separator exists at column X over the content lines (top, bottom)
   // iff every interior char is '|'.
-  const hasVerticalBorder = (col: number, top: number, bottom: number): boolean => {
+  const hasVerticalBorder = (
+    col: number,
+    top: number,
+    bottom: number,
+  ): boolean => {
     for (let li = top + 1; li < bottom; li++) {
       if (grid[li][col] !== '|') return false;
     }
@@ -61,7 +65,11 @@ export function parseRstGridTable(source: string): RstTableModel {
   };
   // A horizontal separator exists on line Y over columns (left, right) iff every
   // interior char is a rule char ('-', '=', '+'). A merged-down cell has spaces.
-  const hasHorizontalBorder = (line: number, left: number, right: number): boolean => {
+  const hasHorizontalBorder = (
+    line: number,
+    left: number,
+    right: number,
+  ): boolean => {
     for (let col = left + 1; col < right; col++) {
       const ch = grid[line][col];
       if (ch !== '-' && ch !== '=' && ch !== '+') return false;
@@ -69,8 +77,12 @@ export function parseRstGridTable(source: string): RstTableModel {
     return true;
   };
 
-  const consumed: boolean[][] = Array.from({length: R}, () => new Array(C).fill(false));
-  const startCell: (RstCell | null)[][] = Array.from({length: R}, () => new Array(C).fill(null));
+  const consumed: boolean[][] = Array.from({ length: R }, () =>
+    new Array(C).fill(false),
+  );
+  const startCell: (RstCell | null)[][] = Array.from({ length: R }, () =>
+    new Array(C).fill(null),
+  );
 
   for (let r = 0; r < R; r++) {
     for (let c = 0; c < C; c++) {
@@ -80,7 +92,11 @@ export function parseRstGridTable(source: string): RstTableModel {
       let c2 = c;
       while (
         c2 + 1 < C &&
-        !hasVerticalBorder(colBoundaries[c2 + 1], rowBoundaries[r], rowBoundaries[r + 1])
+        !hasVerticalBorder(
+          colBoundaries[c2 + 1],
+          rowBoundaries[r],
+          rowBoundaries[r + 1],
+        )
       ) {
         c2++;
       }
@@ -88,7 +104,11 @@ export function parseRstGridTable(source: string): RstTableModel {
       let r2 = r;
       while (
         r2 + 1 < R &&
-        !hasHorizontalBorder(rowBoundaries[r2 + 1], colBoundaries[c], colBoundaries[c2 + 1])
+        !hasHorizontalBorder(
+          rowBoundaries[r2 + 1],
+          colBoundaries[c],
+          colBoundaries[c2 + 1],
+        )
       ) {
         r2++;
       }
@@ -96,7 +116,9 @@ export function parseRstGridTable(source: string): RstTableModel {
       // Extract text from interior lines within the cell's column band.
       const parts: string[] = [];
       for (let li = rowBoundaries[r] + 1; li < rowBoundaries[r2 + 1]; li++) {
-        const seg = grid[li].slice(colBoundaries[c] + 1, colBoundaries[c2 + 1]).trim();
+        const seg = grid[li]
+          .slice(colBoundaries[c] + 1, colBoundaries[c2 + 1])
+          .trim();
         if (seg) parts.push(seg);
       }
 
@@ -127,5 +149,5 @@ export function parseRstGridTable(source: string): RstTableModel {
     else bodyRows.push(row);
   }
 
-  return {headerRows, bodyRows};
+  return { headerRows, bodyRows };
 }

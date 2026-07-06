@@ -1,4 +1,4 @@
-import {describe, it, expect} from 'vitest';
+import { describe, it, expect } from 'vitest';
 import remarkRstTable from './rstTable';
 
 // Build a minimal mdast Root with one rst-table code node and one normal one.
@@ -6,13 +6,19 @@ function makeTree() {
   return {
     type: 'root',
     children: [
-      {type: 'paragraph', children: [{type: 'text', value: 'before'}]},
+      { type: 'paragraph', children: [{ type: 'text', value: 'before' }] },
       {
         type: 'code',
         lang: 'rst-table',
-        value: ['+---+---+', '| A | B |', '+===+===+', '| C | D |', '+---+---+'].join('\n'),
+        value: [
+          '+---+---+',
+          '| A | B |',
+          '+===+===+',
+          '| C | D |',
+          '+---+---+',
+        ].join('\n'),
       },
-      {type: 'code', lang: 'js', value: 'const x = 1;'},
+      { type: 'code', lang: 'js', value: 'const x = 1;' },
     ],
   };
 }

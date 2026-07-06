@@ -1,5 +1,5 @@
-import {describe, it, expect} from 'vitest';
-import {parseRstGridTable, RstCell} from './rstTableParser';
+import { describe, it, expect } from 'vitest';
+import { parseRstGridTable, RstCell } from './rstTableParser';
 
 const find = (rows: RstCell[][], text: string): RstCell | undefined =>
   rows.flat().find((c) => c.text === text);
@@ -23,11 +23,7 @@ describe('parseRstGridTable', () => {
   });
 
   it('treats a table with no === line as all-body', () => {
-    const src = [
-      '+---+---+',
-      '| A | B |',
-      '+---+---+',
-    ].join('\n');
+    const src = ['+---+---+', '| A | B |', '+---+---+'].join('\n');
     const model = parseRstGridTable(src);
     expect(model.headerRows).toHaveLength(0);
     expect(model.bodyRows[0].map((c) => c.text)).toEqual(['A', 'B']);
@@ -90,16 +86,21 @@ describe('parseRstGridTable', () => {
 
     // header
     expect(model.headerRows).toHaveLength(1);
-    expect(model.headerRows[0].map((c) => c.text)).toEqual(['', 'Ед.ч.', 'Дв.ч.', 'Мн.ч.']);
+    expect(model.headerRows[0].map((c) => c.text)).toEqual([
+      '',
+      'Ед.ч.',
+      'Дв.ч.',
+      'Мн.ч.',
+    ]);
 
     // 8 body rows: N V Acc I D Abl G L
     expect(model.bodyRows).toHaveLength(8);
     expect(model.bodyRows[0][0].text).toBe('N.');
 
     // landmark spans
-    expect(find(model.bodyRows, 'jāye')!.rowSpan).toBe(3);        // Дв.ч. across N/V/Acc
-    expect(find(model.bodyRows, 'jāyāḥ (s)')!.rowSpan).toBe(3);   // Мн.ч. across N/V/Acc
-    expect(find(model.bodyRows, 'jāyā-bhyām')!.rowSpan).toBe(3);  // Дв.ч. across I/D/Abl
+    expect(find(model.bodyRows, 'jāye')!.rowSpan).toBe(3); // Дв.ч. across N/V/Acc
+    expect(find(model.bodyRows, 'jāyāḥ (s)')!.rowSpan).toBe(3); // Мн.ч. across N/V/Acc
+    expect(find(model.bodyRows, 'jāyā-bhyām')!.rowSpan).toBe(3); // Дв.ч. across I/D/Abl
     expect(find(model.bodyRows, 'jāyā-bhiḥ (s)')!.rowSpan).toBe(1);
     expect(find(model.bodyRows, 'jāyā-bhyaḥ (s)')!.rowSpan).toBe(2); // across D/Abl
   });
@@ -124,7 +125,11 @@ describe('parseRstGridTable', () => {
   });
 
   it('throws a descriptive error on input that is not a grid table', () => {
-    expect(() => parseRstGridTable('not a table at all')).toThrow(/not a valid RST grid table/);
-    expect(() => parseRstGridTable('+---+')).toThrow(/not a valid RST grid table/);
+    expect(() => parseRstGridTable('not a table at all')).toThrow(
+      /not a valid RST grid table/,
+    );
+    expect(() => parseRstGridTable('+---+')).toThrow(
+      /not a valid RST grid table/,
+    );
   });
 });
