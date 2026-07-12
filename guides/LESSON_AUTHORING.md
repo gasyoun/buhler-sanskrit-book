@@ -174,6 +174,7 @@ Conventions inside `rst-table` cells:
 - Daṇḍas: use `.` for । and `..` for ॥. Never use `|` — in SLP1 it is not a daṇḍa and renders as a garbage retroflex ligature (ळ्ह्).
 - Avagraha: use `'` (apostrophe), e.g. `nfpo 'tra`.
 - No IAST, mixed-case leftovers, or stray annotations inside the `text` attribute.
+- Run `npm run validate:slp1` (`scripts/validate-slp1.mjs`) to catch IAST leftovers: it flags IAST digraphs (`bh`, `gh`, `dh`, `kh`, `ph`, `ch`, `th`, `Bh`…) and diacritic characters (ā, ṛ, ḥ…) in `<Sanscript text>` attributes and in the SLP1 part (before `=`) of `__S_`/`__GTS_` shorthands.
 
 ---
 
@@ -277,4 +278,5 @@ Russian sentences for translation into Sanskrit, one per paragraph. Word-order n
 - [ ] Daṇḍas are `.` / `..`, never `|`; avagraha is `'`
 - [ ] Exercises numbered with word-order hints; grammatical hints in `__GT_`/`__S_` shorthand
 - [ ] Footnotes use `\*` markers with the note text at the bottom of the relevant section
+- [ ] SLP1 is clean: `npm run validate:slp1` reports no IAST leftovers
 - [ ] Build passes: `npm run build`
