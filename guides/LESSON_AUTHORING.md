@@ -24,19 +24,21 @@ import Dictionary from '@site/src/components/Dictionary';
 
 ## Грамматика
 
-## 1. Первая тема
+### 1. Первая тема
 
 Text with __S_sanskrit__ and __GT_latin__ shorthand...
 
-## 2. Вторая тема
+### 2. Вторая тема
 
 ...
 
-## Глаголы
+## Словарь
+
+### Глаголы
 
 <Dictionary name="verb" format="$root $class_roman – $translation" lesson="N" />
 
-## Существительные
+### Существительные
 
 <Dictionary name="noun" format="$word $gender – $translation" lesson="N" />
 
@@ -52,7 +54,9 @@ Numbered translation sentences...
 Rules:
 
 - The title is a setext heading `УРОК N` with the lesson number in Roman numerals (`УРОК VI`).
-- The grammar block opens with `## Грамматика`, followed by one numbered `## 1. ...`, `## 2. ...` heading per topic. Never use bold text, `<u>...</u>` underlining, or escaped numbered paragraphs (`1\.`, `2\.`) as pseudo-headings — they get no anchor and are invisible to the TOC.
+- The four top-level sections are always `## Грамматика`, `## Словарь`, `## Чтение`, `## Упражнения`, in that order.
+- The grammar block opens with `## Грамматика`, followed by one numbered `### 1. ...`, `### 2. ...` subheading per topic. Never use bold text, `<u>...</u>` underlining, or escaped numbered paragraphs (`1\.`, `2\.`) as pseudo-headings — they get no anchor and are invisible to the TOC.
+- Vocabulary goes under `## Словарь`, with one `### ...` subheading per part of speech (`### Глаголы`, `### Существительные`, `### Прилагательные`, `### Наречия`…).
 - Reading sentences go under a `## Чтение` heading — never directly after the dictionaries.
 - Each `<Sanscript>` reading block holds one line of connected sentences; use several consecutive blocks for a longer passage.
 
@@ -194,11 +198,11 @@ Preferred (single list per part of speech, class/gender shown inline):
 When a lesson needs split lists (by verb class, gender, or stem), use `tag` filtering and put the group marker before each list:
 
 ```mdx
-## Глаголы <Latin text="VI" /> класса
+### Глаголы <Latin text="VI" /> класса
 
 <Dictionary name="verb" format="$root ($stem-) – $translation" lesson="N" tag="VI" />
 
-## Существительные
+### Существительные
 
 <Latin text="m" />
 
@@ -268,12 +272,13 @@ Russian sentences for translation into Sanskrit, one per paragraph. Word-order n
 ## Checklist for a New Lesson
 
 - [ ] Frontmatter has `sidebar_position: N`; title is setext `УРОК N` (Roman numeral)
-- [ ] Grammar topics are `## Грамматика` + numbered `## 1. ...` headings (local TOC works)
+- [ ] Sections are `## Грамматика` / `## Словарь` / `## Чтение` / `## Упражнения`, in that order
+- [ ] Grammar topics are numbered `### 1. ...` subheadings under `## Грамматика` (local TOC works)
 - [ ] All Sanskrit in prose uses `__S_slp1__` / `__S_slp1=breakdown__` shorthand
 - [ ] All grammatical terms use `__GT_` (Latin) / `__GTS_` (Sanskrit, canonical spellings — `saMDi`)
 - [ ] Paradigms are ` ```rst-table ` blocks; `(s)` markers inside the shorthand; grid realigned with `npm run align`
 - [ ] `<Latin />` used only for actual Latin (class numerals, gender markers, terminology)
-- [ ] Vocabulary added to the `src/dictionary/` TSVs and rendered via `<Dictionary lesson="N" />`
+- [ ] Vocabulary added to the `src/dictionary/` TSVs and rendered via `<Dictionary lesson="N" />` under `## Словарь` with `### ` per part of speech
 - [ ] Reading blocks under `## Чтение`; `<Sanscript>` text is clean SLP1, no `from` attribute
 - [ ] Daṇḍas are `.` / `..`, never `|`; avagraha is `'`
 - [ ] Exercises numbered with word-order hints; grammatical hints in `__GT_`/`__S_` shorthand
