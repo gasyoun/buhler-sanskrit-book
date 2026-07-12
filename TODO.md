@@ -5,9 +5,9 @@
 ## 1. Ошибки кодировки SLP1 (рендерятся неверной деванагари — приоритет)
 
 - [ ] lesson2:29 — `__S_bhavati__` → `__S_Bavati__`
-- [ ] lesson2:34–35 — `__S_budh__` → `__S_buD__`, `__S_bodh__` → `__S_boD__`, `__S_bodhati__` → `__S_boDati__`
+- [ ] lesson2:34–35 — `__S_budh__` → `__S_buD__`, `__S_bodh__` → `__S_boD__`, `__S_bodhati__` → `__S_boDati__`; также `__S_klp__ в __S_klp__` → `__S_kxp__ в __S_kalp__`, `__S_klpate__` → `__S_kalpate__` (по docx: kḷp в kalp, kalpate — в MDX потеряна и ḷ, и guṇa)
 - [ ] lesson2:16 — `__S_L__` (гласный ḷ) → `__S_x__` (SLP1 `L` — ретрофлексный ḷ)
-- [ ] lesson2:133 — `bavaTaH` → `BavaTaH`
+- [ ] lesson2:133 — `bavaTaH` → `BavataH` (в docx भवतः = bhavataḥ, 3 л. дв. ч. — не `BavaTaH`)
 - [ ] lesson3:92 — `hastAbhyAM` → `hastAByAM`
 - [ ] lesson3:94 — `meghaH` → `meGaH`
 - [ ] lesson4:154 — `kaviBhyAM` → `kaviByAM`, `fziBhI` → `fziBI`
