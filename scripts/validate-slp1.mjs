@@ -6,6 +6,8 @@
 // Flags:
 //  - IAST aspirate digraphs (bh, gh, dh, kh, ph, th, ch, jh — any case):
 //    in SLP1 aspirates are single letters (B G D K P T C J)
+//  - IAST diphthongs ai/au: in SLP1 these are E/O, and Sanskrit forbids
+//    vowel hiatus, so a word-internal "ai"/"au" is always a leftover
 //  - IAST diacritic characters (ā ī ū ṛ ṝ ḷ ḹ ṃ ḥ ṅ ñ ṇ ś ṣ)
 import fs from 'node:fs';
 import path from 'node:path';
@@ -13,6 +15,7 @@ import path from 'node:path';
 const DOCS_DIR = path.join(import.meta.dirname, '..', 'docs');
 
 const IAST_DIGRAPH = /[kgcjwqtdpbKGCJWQTDPB]h/g;
+const IAST_DIPHTHONG = /a[iu]/g;
 const IAST_DIACRITIC = /[āīūṛṝḷḹṃḥṅñṇśṣĀĪŪṚṜḶḸṀḤṄÑṆŚṢ]/g;
 
 const SANSCRIPT_TEXT = /<Sanscript[^>]*\stext="([^"]*)"/g;
@@ -20,7 +23,7 @@ const SHORTHAND = /__(?:S|GTS)_(.+?)__/g;
 
 function findIssues(slp1, source) {
   const issues = [];
-  for (const re of [IAST_DIGRAPH, IAST_DIACRITIC]) {
+  for (const re of [IAST_DIGRAPH, IAST_DIPHTHONG, IAST_DIACRITIC]) {
     re.lastIndex = 0;
     for (const m of slp1.matchAll(re)) {
       issues.push({ match: m[0], source });

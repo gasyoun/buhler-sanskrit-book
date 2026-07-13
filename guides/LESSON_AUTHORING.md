@@ -177,7 +177,7 @@ Conventions inside `rst-table` cells:
 - Daṇḍas: use `.` for । and `..` for ॥. Never use `|` — in SLP1 it is not a daṇḍa and renders as a garbage retroflex ligature (ळ्ह्).
 - Avagraha: use `'` (apostrophe), e.g. `nfpo 'tra`.
 - No IAST, mixed-case leftovers, or stray annotations inside the `text` attribute.
-- Run `npm run validate:slp1` (`scripts/validate-slp1.mjs`) to catch IAST leftovers: it flags IAST digraphs (`bh`, `gh`, `dh`, `kh`, `ph`, `ch`, `th`, `Bh`…) and diacritic characters (ā, ṛ, ḥ…) in `<Sanscript text>` attributes and in the SLP1 part (before `=`) of `__S_`/`__GTS_` shorthands.
+- Run `npm run validate:slp1` (`scripts/validate-slp1.mjs`) to catch IAST leftovers: it flags IAST digraphs (`bh`, `gh`, `dh`, `kh`, `ph`, `ch`, `th`, `Bh`…), IAST diphthongs (`ai`, `au` — in SLP1 these are `E`, `O`), and diacritic characters (ā, ṛ, ḥ…) in `<Sanscript text>` attributes and in the SLP1 part (before `=`) of `__S_`/`__GTS_` shorthands.
 
 ---
 
