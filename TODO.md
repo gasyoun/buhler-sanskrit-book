@@ -4,29 +4,7 @@
 
 ## 1. Ошибки кодировки SLP1 (рендерятся неверной деванагари — приоритет)
 
-- [x] lesson2:29 — `__S_bhavati__` → `__S_Bavati__`
-- [x] lesson2:34–35 — `__S_budh__` → `__S_buD__`, `__S_bodh__` → `__S_boD__`, `__S_bodhati__` → `__S_boDati__`; также `__S_klp__ в __S_klp__` → `__S_kxp__ в __S_kalp__`, `__S_klpate__` → `__S_kalpate__` (по docx: kḷp в kalp, kalpate — в MDX потеряна и ḷ, и guṇa)
-- [x] lesson2:16 — `__S_L__` (гласный ḷ) → `__S_x__` (SLP1 `L` — ретрофлексный ḷ); то же на строке 32
-- [x] lesson2:133 — `bavaTaH` → `BavataH` (в docx भवतः = bhavataḥ, 3 л. дв. ч. — не `BavaTaH`)
-- [x] lesson3:92 — `hastAbhyAM` → `hastAByAM`
-- [x] lesson3:94 — `meghaH` → `meGaH`
-- [x] lesson4:154 — `kaviBhyAM` → `kaviByAM`, `fziBhI` → `fziBI`
-- [x] lesson5:79 — `lubhyanti` → `luByanti`, `ariBhyaH` → `ariByaH`
-- [x] lesson5:81 — `vizNumfziryajati` → `vizRum...` (ṇ = `R`, не `N`)
-- [x] lesson5:85 — `bAhuBhyAM` → `bAhuByAM`
-- [x] lesson6:86 — `luBhyanti` → `luByanti`, `fziradunA` → `fzir aDunA`, `akzEEStatra` → `akzEs tatra` (в docx अक्षैस्तत्र — дентальный `s`, не `S`)
-- [x] lesson6:90 — `gurUF` → `gurUY` (n → ñ перед ś, по правилу самого урока)
-- [x] скрипт-валидатор SLP1 в `scripts/`: флаговать IAST-диграфы (`bh`, `gh`, `dh`, `kh`, `ph`, `Bh`…) в `<Sanscript text>` и в части `__S_` до `=`; добавить в чеклист гайда — `scripts/validate-slp1.mjs`, `npm run validate:slp1`, чеклист в `guides/LESSON_AUTHORING.md` дополнен
-- [x] найдено валидатором дополнительно: `cch` → `cC` (lesson2:127,129,131; lesson3:94,96,98; lesson4:154; lesson5:85; lesson6:90 `fcchataH`); lesson1:49 — `__S_kh__`/`__S_ph__` → `__S_K__`/`__S_P__`
 - [ ] уроки 7–20: валидатор находит 18 IAST-остатков (`bhartAraM`, `kathayataH`, `stenaḥ`, `sidhyati`, `tiSThanti`…) — вычитать против docx (там же и другие смешения кодировок: `rakSed`, `zizavah`, `brAtaro`)
-
-## 2. Урок 1 — привести к стандарту
-
-- [x] добавить `## Грамматика`; темы `1\.`, `2\.`, `3\.` (строки 35, 47, 51) → заголовки — по новой структуре гайда: `### 1.`–`### 3.` под `## Грамматика`; добавлен и `## Словарь` с `### Глаголы I класса` / `### Наречия`
-- [x] pipe-таблицу парадигмы (строки 40–44) → `rst-table` (спаны не нужны — все девять форм различны)
-- [x] добавить `## Чтение` перед блоками `<Sanscript>`
-- [x] упражнения: по одному предложению на абзац (строки 71–75)
-- [x] мелочи: `висаргу, :=` (строка 48), `__GT_Indicativus praesents__` → `praesens` (строка 51), `\[ __S_S, z, s__ \]` → три отдельных `__S_` токена (строка 49)
 
 ## 3. Урок 2 — довести конверсию
 
@@ -44,4 +22,3 @@
 ## 5. Мелкое
 
 - [ ] lesson3:73–74 — пустая строка между двумя `<Dictionary>`
-- [x] гайд: отметить, что состав секций адаптируется к уроку (в уроке 1 нет существительных — есть `## Наречия` + `other.tsv`) — покрыто правилом `## Словарь` («…одна `###`-подсекция на часть речи: Глаголы, Существительные, Прилагательные, Наречия…»)
