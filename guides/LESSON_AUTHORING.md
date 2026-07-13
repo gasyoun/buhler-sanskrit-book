@@ -130,11 +130,10 @@ Single phonemes under discussion (i, u, ṛ, ś, ṣ...) may stay as plain IAST 
 
 The `<Latin />` component is reserved for genuinely Latin material:
 
-- Roman numerals for verb classes: `<Latin text="VI" />`
 - Gender markers: `<Latin text="m" />`, `<Latin text="n" />`, `<Latin text="f" />`
 - Latin grammatical terminology not in shorthand: `<Latin text="commodi"/>`, `<Latin text="partitivus"/>`
 
-Never use it for Sanskrit words.
+Never use it for Sanskrit words. Roman numerals (verb classes, lesson numbers) are plain text — `УРОК I`, `### Глаголы I класса` — they are numerals, not Latin words, and JSX inside a heading gets stripped from its anchor slug.
 
 ### Sandhi Transformations
 
@@ -198,7 +197,7 @@ Preferred (single list per part of speech, class/gender shown inline):
 When a lesson needs split lists (by verb class, gender, or stem), use `tag` filtering and put the group marker before each list:
 
 ```mdx
-### Глаголы <Latin text="VI" /> класса
+### Глаголы VI класса
 
 <Dictionary name="verb" format="$root ($stem-) – $translation" lesson="N" tag="VI" />
 
@@ -277,7 +276,7 @@ Russian sentences for translation into Sanskrit, one per paragraph. Word-order n
 - [ ] All Sanskrit in prose uses `__S_slp1__` / `__S_slp1=breakdown__` shorthand
 - [ ] All grammatical terms use `__GT_` (Latin) / `__GTS_` (Sanskrit, canonical spellings — `saMDi`)
 - [ ] Paradigms are ` ```rst-table ` blocks; `(s)` markers inside the shorthand; grid realigned with `npm run align`
-- [ ] `<Latin />` used only for actual Latin (class numerals, gender markers, terminology)
+- [ ] `<Latin />` used only for actual Latin (gender markers, terminology); Roman numerals are plain text
 - [ ] Vocabulary added to the `src/dictionary/` TSVs and rendered via `<Dictionary lesson="N" />` under `## Словарь` with `### ` per part of speech
 - [ ] Reading blocks under `## Чтение`; `<Sanscript>` text is clean SLP1, no `from` attribute
 - [ ] Daṇḍas are `.` / `..`, never `|`; avagraha is `'`
