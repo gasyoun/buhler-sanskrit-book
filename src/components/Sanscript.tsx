@@ -2,10 +2,10 @@ import React from 'react';
 import Sanscript from '@indic-transliteration/sanscript';
 
 interface SanscriptProps {
-    children?: string;
-    text?: string;
-    from?: string;
-    to?: string;
+  children?: string;
+  text?: string;
+  from?: string;
+  to?: string;
 }
 
 /**
@@ -16,14 +16,21 @@ interface SanscriptProps {
  * @param to - Target script (default: 'devanagari')
  */
 const SanscriptComponent: React.FC<SanscriptProps> = ({
-                                                          children,
-                                                          text,
-                                                          from = 'slp1',
-                                                          to = 'devanagari'
-                                                      }) => {
-    const content = text || children || '';
-    const converted = Sanscript.t(content, from, to);
-    return <div className="sanscript-text" style={{fontSize: '1.2em', display: 'block', marginBottom: '1em'}}>{converted}</div>;
+  children,
+  text,
+  from = 'slp1',
+  to = 'devanagari',
+}) => {
+  const content = text || children || '';
+  const converted = Sanscript.t(content, from, to);
+  return (
+    <div
+      className="sanscript-text"
+      style={{ fontSize: '1.2em', display: 'block', marginBottom: '1em' }}
+    >
+      {converted}
+    </div>
+  );
 };
 
 export default SanscriptComponent;
