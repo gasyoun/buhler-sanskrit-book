@@ -1,8 +1,8 @@
 import React from 'react';
 
 interface LatinProps {
-    children?: string;
-    text?: string;
+  children?: string;
+  text?: string;
 }
 
 /**
@@ -10,9 +10,13 @@ interface LatinProps {
  * @param children - The Latin text to display (for tag syntax)
  * @param text - The Latin text to display (for prop syntax)
  */
-const Latin: React.FC<LatinProps> = ({children, text}) => {
-    const content = text || children || '';
-    return <span className="latin-text" style={{fontStyle: 'italic'}}>{content}</span>;
+const Latin: React.FC<LatinProps> = ({ children, text }) => {
+  const content = text || children || '';
+  return (
+    <span className="latin-text" style={{ fontStyle: 'italic' }}>
+      {content}
+    </span>
+  );
 };
 
 export default Latin;
