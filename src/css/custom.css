@@ -31,50 +31,127 @@
 
 /* Sanskrit text styling */
 .sanscript-text {
-  font-size: 1.3em;
-  line-height: 1.8;
-  font-family: 'Noto Sans Devanagari', 'Noto Serif Devanagari', 'Mangal', 'Kokila', sans-serif;
-  color: #1a1a1a;
-  display: inline-block;
-  padding: 0.5em 1em;
-  margin: 0.5em 0;
-  background-color: rgba(255, 248, 240, 0.5);
-  border-left: 3px solid var(--ifm-color-primary);
-  border-radius: 4px;
+  color: #2e5090;
+  font-weight: 500;
 }
 
 [data-theme='dark'] .sanscript-text {
-  color: #e8e8e8;
-  background-color: rgba(40, 40, 50, 0.5);
+  color: #88b4ff;
 }
 
-/* Latin text styling */
+/*
+ * Highlighted-word palette (issue #4).
+ * Four distinct roles, each with its own hue; all colors meet WCAG AA
+ * (contrast >= 4.5:1) against the page background in both themes:
+ *
+ *   role                        light    dark     example
+ *   Sanskrit words (IAST)       #2e5090  #88b4ff  vadāmi, deva
+ *   Latin grammar terms         #1a7f37  #7ee787  Indicativus, Accusativus
+ *   Sanskrit grammar terms      #6f42c1  #d2a8ff  parasmaipada, saṃdhi
+ *   word elements (roots,       #953800  #ffa657  vad-, -a-, -mi
+ *   stems, endings)
+ */
+:root {
+  --sanskrit-word-color: #2e5090;
+  --grammatical-term-color: #1a7f37;
+  --grammatical-term-sanskrit-color: #6f42c1;
+  --word-element-color: #953800;
+}
+
+[data-theme='dark'] {
+  --sanskrit-word-color: #88b4ff;
+  --grammatical-term-color: #7ee787;
+  --grammatical-term-sanskrit-color: #d2a8ff;
+  --word-element-color: #ffa657;
+}
+
+/* Latin text styling — Sanskrit words in IAST transliteration */
 .latin-text {
   font-style: italic;
-  color: #2e5090;
+  color: var(--sanskrit-word-color);
   font-weight: 500;
 }
 
-[data-theme='dark'] .latin-text {
-  color: #88b4ff;
-}
-
-/* Grammatical term styling */
+/* Grammatical term styling — Latin terminology */
 .grammatical-term {
-  color: #29d855;
+  color: var(--grammatical-term-color);
   font-weight: 500;
 }
 
-[data-theme='dark'] .grammatical-term {
-  color: #f9e718;
+/* Sanskrit grammatical term styling — parasmaipada, saṃdhi, guṇa, ... */
+.grammatical-term-sanskrit {
+  color: var(--grammatical-term-sanskrit-color);
+  font-weight: 500;
 }
 
-/* Sanskrit grammatical term styling */
-.grammatical-term-sanskrit {
+/* Word elements — roots, stems, affixes and endings under discussion */
+.word-element {
+  font-style: italic;
+  color: var(--word-element-color);
+  font-weight: 500;
+}
+
+/* Sanskrit text shorthand styling */
+.sanskrit-text {
   color: #2e5090;
   font-weight: 500;
 }
 
-[data-theme='dark'] .grammatical-term-sanskrit {
+[data-theme='dark'] .sanskrit-text {
   color: #88b4ff;
+}
+
+/*
+ * Citation block anchors (issue #5).
+ * src/clientModules/citationBlocks.ts gives every top-level content block of a
+ * docs page (paragraph, Sanskrit sentence block, table, list) an id (block-N)
+ * and injects a small clickable number in the left margin, so a passage can be
+ * linked/cited by URL as «.../lesson3#block-12». Numbers are shown only on
+ * desktop, where the margin exists; hidden on narrow screens.
+ */
+.theme-doc-markdown > .cited-block {
+  scroll-margin-top: calc(var(--ifm-navbar-height, 3.75rem) + 1rem);
+}
+
+/*
+ * Highlight the block you followed a citation link to. Driven by a JS-added
+ * class (not :target), because :target is not re-evaluated when the block id is
+ * assigned after page load. Works on all viewport widths.
+ */
+.theme-doc-markdown > .cited-block.block-target {
+  outline: 2px solid var(--ifm-color-primary-lighter);
+  outline-offset: 4px;
+  border-radius: 2px;
+}
+
+.block-number {
+  display: none;
+}
+
+@media (min-width: 997px) {
+  .theme-doc-markdown > .cited-block {
+    position: relative;
+  }
+
+  .block-number {
+    display: block;
+    position: absolute;
+    left: -2.8em;
+    top: 0.2em;
+    width: 2.2em;
+    text-align: right;
+    font-size: 0.7rem;
+    font-style: normal;
+    font-weight: 400;
+    color: var(--ifm-color-emphasis-400);
+    text-decoration: none;
+    user-select: none;
+    transition: color 0.15s ease;
+  }
+
+  .block-number:hover,
+  .block-number:focus {
+    color: var(--ifm-color-primary);
+    text-decoration: none;
+  }
 }
