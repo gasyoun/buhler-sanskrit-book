@@ -1,5 +1,6 @@
 import React from 'react';
 import Papa from 'papaparse';
+import Sanscript from '@indic-transliteration/sanscript';
 
 import verbDictionary from '../dictionary/verb.tsv';
 import nounDictionary from '../dictionary/noun.tsv';
@@ -11,44 +12,47 @@ import otherDictionary from '../dictionary/other.tsv';
 import samskrtamVerbLinks from '../dictionary/samskrtam-verb-links.tsv';
 
 interface DictionaryProps {
-    name: 'verb' | 'noun' | 'adjective' | 'other';
-    lesson: string;
-    tag?: string;
-    format?: string;
+  name: 'verb' | 'noun' | 'adjective' | 'other';
+  lesson: string;
+  tag?: string;
+  format?: string;
 }
 
 function parseDictionaryTsv(tsvContent: string): Array<Record<string, string>> {
-    const result = Papa.parse(tsvContent, {
-        delimiter: '\t',
-        header: true,
-        skipEmptyLines: true,
-        transformHeader: (header: string) => header.trim(),
-        transform: (value: string) => value.trim(),
-        complete: (results) => {
-            const criticalErrors = results.errors.filter(error =>
-                error.type !== 'FieldMismatch' ||
-                (error.type === 'FieldMismatch' && error.code !== 'TooFewFields')
-            );
-            if (criticalErrors.length > 0) {
-                console.warn('Critical TSV parsing errors:', criticalErrors);
-            }
-        }
-    });
+  const result = Papa.parse(tsvContent, {
+    delimiter: '\t',
+    header: true,
+    skipEmptyLines: true,
+    transformHeader: (header: string) => header.trim(),
+    transform: (value: string) => value.trim(),
+    complete: (results) => {
+      const criticalErrors = results.errors.filter(
+        (error) =>
+          error.type !== 'FieldMismatch' ||
+          (error.type === 'FieldMismatch' && error.code !== 'TooFewFields'),
+      );
+      if (criticalErrors.length > 0) {
+        console.warn('Critical TSV parsing errors:', criticalErrors);
+      }
+    },
+  });
 
-    return result.data as Array<Record<string, string>>;
+  return result.data as Array<Record<string, string>>;
 }
 
 const samskrtamVerbIds: Map<string, string> = new Map(
-    parseDictionaryTsv(samskrtamVerbLinks)
-        .map(row => [row.root, row.samskrtam_id])
+  parseDictionaryTsv(samskrtamVerbLinks).map((row) => [
+    row.root,
+    row.samskrtam_id,
+  ]),
 );
 
 function samskrtamUrl(dictionaryName: string, headword: string): string | null {
-    if (dictionaryName !== 'verb') {
-        return null;
-    }
-    const id = samskrtamVerbIds.get(headword);
-    return id ? `https://samskrtam.ru/z/verb.php?id=${id}` : null;
+  if (dictionaryName !== 'verb') {
+    return null;
+  }
+  const id = samskrtamVerbIds.get(headword);
+  return id ? `https://samskrtam.ru/z/verb.php?id=${id}` : null;
 }
 
 /**
@@ -58,138 +62,156 @@ function samskrtamUrl(dictionaryName: string, headword: string): string | null {
  * @param tag - Optional secondary tag filter (e.g., "lesson3-VI")
  * @param format - Custom format string with column placeholders marked with $ (e.g., "$root - $translation")
  */
-const Dictionary: React.FC<DictionaryProps> = ({name, lesson, tag, format}) => {
-    if (!format) {
-        return <div style={{color: 'red', fontWeight: 'bold'}}>Dictionary: no format provided</div>;
-    }
-
-    let tsvDictionaryContent: string;
-    switch (name) {
-        case 'verb':
-            tsvDictionaryContent = verbDictionary;
-            break;
-        case 'noun':
-            tsvDictionaryContent = nounDictionary;
-            break;
-        case 'adjective':
-            tsvDictionaryContent = adjectiveDictionary;
-            break;
-        case 'other':
-            tsvDictionaryContent = otherDictionary;
-            break;
-        default:
-            return <div>Unknown dictionary: {name}</div>;
-    }
-
-    const allEntries = parseDictionaryTsv(tsvDictionaryContent);
-    let filteredEntries = allEntries.filter(entry => entry.lesson === lesson);
-    if (tag) {
-        filteredEntries = filteredEntries.filter(entry => entry.tag === tag);
-    }
-
-    if (filteredEntries.length === 0) {
-        const filterMessage = tag ? `lesson: ${lesson} and tag: ${tag}` : `lesson: ${lesson}`;
-        return <div>No entries found for {filterMessage}</div>;
-    }
-
-    const getMainColumns = () => {
-        switch (name) {
-            case 'verb':
-                return {sanskrit: 'root', translation: 'translation'};
-            case 'noun':
-                return {sanskrit: 'word', translation: 'translation'};
-            case 'adjective':
-                return {sanskrit: 'word', translation: 'translation'};
-            case 'other':
-                return {sanskrit: 'entity', translation: 'translation'};
-            default:
-                return {sanskrit: 'root', translation: 'translation'};
-        }
-    };
-
-    const {sanskrit: sanskritColumn} = getMainColumns();
-
-    const renderFormattedEntry = (entry: Record<string, string>, formatString: string) => {
-        const placeholderRegex = /\$([a-zA-Z0-9_]+)/g;
-        const parts: React.ReactNode[] = [];
-        let lastIndex = 0;
-        let match: RegExpExecArray | [any, any];
-
-        while ((match = placeholderRegex.exec(formatString)) !== null) {
-            const [fullMatch, columnName] = match;
-            const value = entry[columnName] || '';
-
-            if (match.index > lastIndex) {
-                const beforeText = formatString.slice(lastIndex, match.index);
-                if (beforeText) {
-                    parts.push(
-                        <span key={`text-${parts.length}`} style={{color: 'inherit'}}>
-                            {beforeText}
-                        </span>
-                    );
-                }
-            }
-
-            if (columnName === sanskritColumn) {
-                const url = samskrtamUrl(name, value);
-                parts.push(
-                    url ? (
-                        <a
-                            key={`placeholder-${parts.length}`}
-                            href={url}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            style={{color: '#88b4ff', fontWeight: '500'}}
-                            title={`${value} — samskrtam.ru`}
-                        >
-                            {value}
-                        </a>
-                    ) : (
-                        <span key={`placeholder-${parts.length}`} style={{color: '#88b4ff', fontWeight: '500'}}>
-                            {value}
-                        </span>
-                    )
-                );
-            } else {
-                parts.push(
-                    <span key={`placeholder-${parts.length}`} style={{color: 'inherit'}}>
-                        {value}
-                    </span>
-                );
-            }
-
-            lastIndex = match.index + fullMatch.length;
-        }
-
-        if (lastIndex < formatString.length) {
-            const remainingText = formatString.slice(lastIndex);
-            if (remainingText) {
-                parts.push(
-                    <span key={`text-${parts.length}`} style={{color: 'inherit'}}>
-                        {remainingText}
-                    </span>
-                );
-            }
-        }
-
-        return parts;
-    };
-
+const Dictionary: React.FC<DictionaryProps> = ({
+  name,
+  lesson,
+  tag,
+  format,
+}) => {
+  if (!format) {
     return (
-        <div className="dictionary-list" style={{marginBottom: '1.5em'}}>
-            {filteredEntries.map((entry, index) => (
-                <div
-                    key={entry.id || index}
-                    style={{
-                        marginBottom: '0.5em',
-                        lineHeight: '1.4'
-                    }}
-                >
-                    {renderFormattedEntry(entry, format)}
-                </div>
-            ))}
-        </div>
+      <div style={{ color: 'red', fontWeight: 'bold' }}>
+        Dictionary: no format provided
+      </div>
     );
+  }
+
+  let tsvDictionaryContent: string;
+  switch (name) {
+    case 'verb':
+      tsvDictionaryContent = verbDictionary;
+      break;
+    case 'noun':
+      tsvDictionaryContent = nounDictionary;
+      break;
+    case 'adjective':
+      tsvDictionaryContent = adjectiveDictionary;
+      break;
+    case 'other':
+      tsvDictionaryContent = otherDictionary;
+      break;
+    default:
+      return <div>Unknown dictionary: {name}</div>;
+  }
+
+  const allEntries = parseDictionaryTsv(tsvDictionaryContent);
+  let filteredEntries = allEntries.filter((entry) => entry.lesson === lesson);
+  if (tag) {
+    filteredEntries = filteredEntries.filter((entry) => entry.tag === tag);
+  }
+
+  if (filteredEntries.length === 0) {
+    const filterMessage = tag
+      ? `lesson: ${lesson} and tag: ${tag}`
+      : `lesson: ${lesson}`;
+    return <div>No entries found for {filterMessage}</div>;
+  }
+
+  const sanskritColumns = ['root', 'stem', 'word', 'entity'];
+
+  const renderSanskritValue = (value: string, key: string) => {
+    const devanagari = Sanscript.t(value, 'slp1', 'devanagari');
+    const iast = Sanscript.t(value, 'slp1', 'iast');
+    const url = samskrtamUrl(name, value);
+    const label = (
+      <>
+        <span
+          className="sanscript-text"
+          style={{ color: '#88b4ff', fontWeight: '500' }}
+        >
+          {devanagari}
+        </span>{' '}
+        ({iast})
+      </>
+    );
+    return (
+      <span key={key}>
+        {url ? (
+          <a
+            href={url}
+            target="_blank"
+            rel="noopener noreferrer"
+            style={{ color: 'inherit' }}
+            title={`${value} — samskrtam.ru`}
+          >
+            {label}
+          </a>
+        ) : (
+          label
+        )}
+      </span>
+    );
+  };
+
+  const renderFormattedEntry = (
+    entry: Record<string, string>,
+    formatString: string,
+  ) => {
+    const placeholderRegex = /\$([a-zA-Z0-9_]+)/g;
+    const parts: React.ReactNode[] = [];
+    let lastIndex = 0;
+    let match: RegExpExecArray | [any, any];
+
+    while ((match = placeholderRegex.exec(formatString)) !== null) {
+      const [fullMatch, columnName] = match;
+      const value = entry[columnName] || '';
+
+      if (match.index > lastIndex) {
+        const beforeText = formatString.slice(lastIndex, match.index);
+        if (beforeText) {
+          parts.push(
+            <span key={`text-${parts.length}`} style={{ color: 'inherit' }}>
+              {beforeText}
+            </span>,
+          );
+        }
+      }
+
+      if (sanskritColumns.includes(columnName) && value) {
+        parts.push(renderSanskritValue(value, `placeholder-${parts.length}`));
+      } else {
+        parts.push(
+          <span
+            key={`placeholder-${parts.length}`}
+            style={{ color: 'inherit' }}
+          >
+            {value}
+          </span>,
+        );
+      }
+
+      lastIndex = match.index + fullMatch.length;
+    }
+
+    if (lastIndex < formatString.length) {
+      const remainingText = formatString.slice(lastIndex);
+      if (remainingText) {
+        parts.push(
+          <span key={`text-${parts.length}`} style={{ color: 'inherit' }}>
+            {remainingText}
+          </span>,
+        );
+      }
+    }
+
+    return parts;
+  };
+
+  return (
+    <div className="dictionary-list" style={{ marginBottom: '1.5em' }}>
+      {filteredEntries.map((entry, index) => (
+        <div
+          key={entry.id || index}
+          style={{
+            marginBottom: '0.5em',
+            lineHeight: '1.4',
+          }}
+        >
+          {renderFormattedEntry(entry, format)}
+        </div>
+      ))}
+    </div>
+  );
 };
 
 export default Dictionary;
