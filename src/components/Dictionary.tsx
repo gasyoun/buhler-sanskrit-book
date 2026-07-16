@@ -131,7 +131,12 @@ const Dictionary: React.FC<DictionaryProps> = ({
             href={url}
             target="_blank"
             rel="noopener noreferrer"
-            style={{ color: 'inherit' }}
+            style={{
+              color: 'inherit',
+              textDecoration: 'underline',
+              textDecorationColor: 'rgba(136, 180, 255, 0.5)',
+              textUnderlineOffset: '3px',
+            }}
             title={`${value} — samskrtam.ru`}
           >
             {label}
