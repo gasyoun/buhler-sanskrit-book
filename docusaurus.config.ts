@@ -1,14 +1,17 @@
-import {themes as prismThemes} from 'prism-react-renderer';
-import type {Config} from '@docusaurus/types';
+import { themes as prismThemes } from 'prism-react-renderer';
+import type { Config } from '@docusaurus/types';
 import type * as Preset from '@docusaurus/preset-classic';
 import grammaticalTermShorthand from './src/remark/grammaticalTermShorthand';
 import grammaticalTermSanskritShorthand from './src/remark/grammaticalTermSanskritShorthand';
+import sanskritTextShorthand from './src/remark/sanskritTextShorthand';
+import remarkRstTable from './src/remark/rstTable';
 
 // This runs in Node.js - Don't use client-side code here (browser APIs, JSX...)
 
 const config: Config = {
-  title: 'My Site',
-  tagline: 'Dinosaurs are cool',
+  title: 'Санскрит: элементарный курс Бюлера — упражнения',
+  tagline:
+    'Электронное издание упражнений из учебника Г. Бюлера (Стокгольм, 1923)',
   favicon: 'img/favicon.ico',
 
   // Future flags, see https://docusaurus.io/docs/api/docusaurus-config#future
@@ -34,9 +37,12 @@ const config: Config = {
   // useful metadata like html lang. For example, if your site is Chinese, you
   // may want to replace "en" with "zh-Hans".
   i18n: {
-    defaultLocale: 'en',
-    locales: ['en'],
+    defaultLocale: 'ru',
+    locales: ['ru'],
   },
+
+  // Turns each top-level docs content block into a citable #block-N anchor.
+  clientModules: ['./src/clientModules/citationBlocks.ts'],
 
   plugins: [
     function tsvLoaderPlugin() {
@@ -59,12 +65,15 @@ const config: Config = {
   ],
 
   themes: [
-    ['@easyops-cn/docusaurus-search-local', {
-      hashed: true,
-      language: ['ru', 'en'],
-      indexBlog: false,
-      removeDefaultStopWordFilter: true,
-    }],
+    [
+      '@easyops-cn/docusaurus-search-local',
+      {
+        hashed: true,
+        language: ['ru', 'en'],
+        indexBlog: false,
+        removeDefaultStopWordFilter: true,
+      },
+    ],
   ],
 
   presets: [
@@ -73,11 +82,14 @@ const config: Config = {
       {
         docs: {
           sidebarPath: './sidebars.ts',
-          remarkPlugins: [grammaticalTermShorthand, grammaticalTermSanskritShorthand],
-          // Please change this to your repo.
-          // Remove this to remove the "edit this page" links.
+          remarkPlugins: [
+            remarkRstTable,
+            grammaticalTermShorthand,
+            grammaticalTermSanskritShorthand,
+            sanskritTextShorthand,
+          ],
           editUrl:
-            'https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/',
+            'https://github.com/alexander-myltsev/buhler-sanskrit-book/tree/main/',
         },
         theme: {
           customCss: './src/css/custom.css',
@@ -103,9 +115,9 @@ const config: Config = {
       maxHeadingLevel: 4,
     },
     navbar: {
-      title: 'My Site',
+      title: 'Упражнения Бюлера',
       logo: {
-        alt: 'My Site Logo',
+        alt: 'Санскрит: элементарный курс Бюлера',
         src: 'img/logo.svg',
       },
       items: [
@@ -113,10 +125,10 @@ const config: Config = {
           type: 'docSidebar',
           sidebarId: 'tutorialSidebar',
           position: 'left',
-          label: 'Tutorial',
+          label: 'Уроки',
         },
         {
-          href: 'https://github.com/facebook/docusaurus',
+          href: 'https://github.com/alexander-myltsev/buhler-sanskrit-book',
           label: 'GitHub',
           position: 'right',
         },
@@ -126,42 +138,33 @@ const config: Config = {
       style: 'dark',
       links: [
         {
-          title: 'Docs',
+          title: 'Учебник',
           items: [
             {
-              label: 'Tutorial',
+              label: 'Введение',
               to: '/docs/intro',
             },
-          ],
-        },
-        {
-          title: 'Community',
-          items: [
             {
-              label: 'Stack Overflow',
-              href: 'https://stackoverflow.com/questions/tagged/docusaurus',
-            },
-            {
-              label: 'Discord',
-              href: 'https://discordapp.com/invite/docusaurus',
-            },
-            {
-              label: 'X',
-              href: 'https://x.com/docusaurus',
+              label: 'Урок 1',
+              to: '/docs/lesson1',
             },
           ],
         },
         {
-          title: 'More',
+          title: 'Проект',
           items: [
             {
               label: 'GitHub',
-              href: 'https://github.com/facebook/docusaurus',
+              href: 'https://github.com/alexander-myltsev/buhler-sanskrit-book',
+            },
+            {
+              label: 'Issues',
+              href: 'https://github.com/alexander-myltsev/buhler-sanskrit-book/issues',
             },
           ],
         },
       ],
-      copyright: `Copyright © ${new Date().getFullYear()} My Project, Inc. Built with Docusaurus.`,
+      copyright: `Электронная версия упражнений © Н. П. Лихушина, 2008. Построено на Docusaurus.`,
     },
     prism: {
       theme: prismThemes.github,
