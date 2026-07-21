@@ -1,0 +1,35 @@
+name: Test
+
+# Runs the vitest suite on every push/PR to main, including the rstTable
+# drift-guard (src/remark/rstTable.drift-guard.test.ts, H1394): it fetches the
+# live .mjs port copies of rstTable/rstTableAst/rstTableParser maintained by
+# hand in sanskrit-lexicon/csl-guides and gasyoun/SanskritGrammar and checks
+# (a) the two ports are byte-identical to each other and (b) the csl-guides
+# port is behaviorally equivalent to this repo's own TS canonical over its own
+# fixtures. Needs outbound network access to raw.githubusercontent.com, which
+# GitHub-hosted runners have by default. Before this workflow, only
+# dependabot-auto-merge.yml existed — `npm test` had no CI enforcement at all.
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+
+      - uses: actions/setup-node@v6
+        with:
+          node-version: '20'
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Typecheck
+        run: npm run typecheck
+
+      - name: Test (vitest, includes the rstTable drift-guard)
+        run: npm test
