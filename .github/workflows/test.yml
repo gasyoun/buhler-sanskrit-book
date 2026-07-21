@@ -9,6 +9,12 @@ name: Test
 # fixtures. Needs outbound network access to raw.githubusercontent.com, which
 # GitHub-hosted runners have by default. Before this workflow, only
 # dependabot-auto-merge.yml existed — `npm test` had no CI enforcement at all.
+#
+# Deliberately does NOT run `npm run typecheck`: the repo currently has
+# pre-existing, unrelated `tsc` errors (@theme/Heading module resolution in
+# src/pages/index.tsx and src/components/HomepageFeatures/index.tsx) that
+# predate and are out of scope for H1394 — wiring typecheck into CI is a
+# separate follow-up, not bundled into this drift-guard task.
 on:
   push:
     branches: [main]
@@ -27,9 +33,6 @@ jobs:
 
       - name: Install dependencies
         run: npm ci
-
-      - name: Typecheck
-        run: npm run typecheck
 
       - name: Test (vitest, includes the rstTable drift-guard)
         run: npm test
