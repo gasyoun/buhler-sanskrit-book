@@ -1,46 +1,60 @@
 # CLAUDE.md
 
-This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository.
+_Created: 28-02-2026 · Last updated: 16-08-2026_
 
-## Project Overview
+`buhler-sanskrit-book` is a **Docusaurus 3** static site for Bühler's
+Sanskrit grammar — 20 lessons in Russian with Sanskrit examples — deployed
+to GitHub Pages at
+[gasyoun.github.io/buhler-sanskrit-book](https://gasyoun.github.io/buhler-sanskrit-book/).
 
-Docusaurus 3.9.1 static site for Bühler's Sanskrit grammar book — 20 lessons in Russian with Sanskrit examples. Deployed to GitHub Pages at `/buhler-sanskrit-book/`.
+Org conventions live in [`../CLAUDE.md`](https://github.com/gasyoun/github-spine/blob/main/CLAUDE.md).
+Before encodings or corpus data, read the
+[Sanskrit context primer](https://github.com/gasyoun/github-spine/blob/main/SANSKRIT_CONTEXT_PRIMER.md).
 
-## Commands
+## How to run
 
-- `npm start` — Dev server with hot reload
-- `npm run build` — Production build to `/build`
-- `npm run typecheck` — TypeScript type checking
-- `npm run serve` — Serve production build locally
-- `npm run deploy` — Deploy to gh-pages branch
+```sh
+npm start           # dev server, hot reload
+npm run build       # production → /build
+npm run typecheck   # TypeScript
+npm run serve       # serve the production build
+npm run deploy      # gh-pages
+```
 
-## Architecture
+Lessons are MDX under `docs/` (`lesson1.mdx`–`lesson20.mdx`) with
+`sidebar_position`; the sidebar is filesystem-generated. Vocabulary is four
+TSVs in [`src/dictionary/`](https://github.com/gasyoun/buhler-sanskrit-book/tree/main/src/dictionary)
+(`verb.tsv`, `noun.tsv`, `adjective.tsv`, `other.tsv`) parsed at runtime
+with PapaParse.
 
-### Content (docs/)
-MDX lesson files (`lesson1.mdx`–`lesson20.mdx`) with `sidebar_position` frontmatter. Sidebar is auto-generated from filesystem. Lessons use custom React components inline and are written in Russian.
+Custom components in
+[`src/components/`](https://github.com/gasyoun/buhler-sanskrit-book/tree/main/src/components):
+`Dictionary.tsx` (filter TSV by `name` / `lesson` / `tag`, `format` with
+`$field` placeholders), `Sanscript.tsx` (default SLP1 → Devanagari via
+`@indic-transliteration/sanscript`), `Latin.tsx`. Remark plugin
+[`src/remark/grammaticalTermShorthand.ts`](https://github.com/gasyoun/buhler-sanskrit-book/blob/main/src/remark/grammaticalTermShorthand.ts)
+turns `GT_term` / `__GT_term__` into styled spans.
 
-### Dictionary Data (src/dictionary/)
-Four TSV files (`verb.tsv`, `noun.tsv`, `adjective.tsv`, `other.tsv`) serve as vocabulary data. Each has an `id`, lesson number, and type-specific fields (root/class/stem for verbs, word/gender for nouns). Parsed at runtime with PapaParse.
+The TypeScript remark helpers under
+[`src/remark/`](https://github.com/gasyoun/buhler-sanskrit-book/tree/main/src/remark)
+are the **canonical** `rstTable*` copy; SanskritGrammar and csl-guides
+carry hand-synced `.mjs` ports — keep all three in sync by hand.
 
-### Custom Components (src/components/)
-- **Dictionary.tsx** — Renders filtered TSV entries by `name` (verb|noun|adjective|other), `lesson`, and optional `tag`. Uses a `format` prop with `$field` placeholders (e.g., `$root – $translation`).
-- **Sanscript.tsx** — Transliterates Sanskrit text between scripts (default: SLP1 → Devanagari) using `@indic-transliteration/sanscript`.
-- **Latin.tsx** — Italic blue-styled Latin text.
+TSV webpack import is wired in `docusaurus.config.ts`; types:
+`src/types/tsv.d.ts`.
 
-### Remark Plugin (src/remark/grammaticalTermShorthand.ts)
-Custom MDX remark plugin registered in `docusaurus.config.ts`. Transforms `GT_term` and `__GT_term__` patterns in Markdown into styled grammatical term spans. Uses `unist-util-visit` for AST traversal.
+## Do not touch
 
-### TSV Import Support
-A custom webpack plugin in `docusaurus.config.ts` enables importing `.tsv` files as raw strings. Type declaration at `src/types/tsv.d.ts`.
+- `build/`, `node_modules/` — generated/local.
+- Do not hand-edit generated Docusaurus cache.
+- Do not fork a second dictionary parser — `Dictionary.tsx` + the four TSVs
+  are the vocabulary path.
+- `sanskrit-util iast_to_devanagari` is broken; this site uses Sanscript
+  for display conversion.
 
-### Styling (src/css/custom.css)
-Uses Docusaurus Infima CSS variables. Key component classes: `.sanscript-text` (Devanagari with Noto fonts), `.latin-text` (italic blue), `.grammatical-term` (green/yellow). All support dark mode via `[data-theme='dark']`.
+Danger facts:
+[Uprava DANGER_FACTS.md](https://github.com/gasyoun/Uprava/blob/main/DANGER_FACTS.md)
+and the generated block of
+[AGENTS.md](https://github.com/gasyoun/buhler-sanskrit-book/blob/main/AGENTS.md).
 
-## Operational hazard notes
-
-Destructive-risk facts for this repo (do-not-rerun scripts, decoys, traps) are
-registered centrally in an org-private hub
-([Uprava DANGER_FACTS.md](https://github.com/gasyoun/Uprava/blob/main/DANGER_FACTS.md),
-org members only); the public-safe subset is mirrored in the generated block of
-[AGENTS.md](https://github.com/gasyoun/buhler-sanskrit-book/blob/main/AGENTS.md). Check them
-before running anything that writes.
+_Dr. Mārcis Gasūns_
