@@ -6,6 +6,14 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ## [Unreleased]
 
+### Changed
+
+- **H2820 — CLAUDE.md truth-pass** (Grok 4.6 `grok-4.6`, 16-08-2026). What this
+  repo is (Docusaurus site for Bühler's 20 Russian lessons), how to run
+  (`npm start` / `build` / `typecheck`), do-not-touch (`build/`, second
+  dictionary parser; keep `rstTable*` in sync with SanskritGrammar). AGENTS.md
+  twin regenerated.
+
 ## [0.1.0] - 2026-07-31
 
 ### Added
