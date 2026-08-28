@@ -6,6 +6,14 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ## [Unreleased]
 
+### Fixed
+
+- **H3603 — typecheck true red (OxAlpha, opencode `zai-coding-plan/glm-5.3-flash`,
+  28-08-2026)**: `npm run typecheck` exits 0 again. `@docusaurus/module-type-aliases`
+  3.9.1 ships no `@theme/Heading` declaration and a children-only `@theme/Layout`
+  Props; declared the missing module and merged `title`/`description` into the
+  Layout Props in `src/types/docusaurus.d.ts`. 26/26 vitest tests stay green.
+
 ## [0.1.1] - 2026-08-24
 
 
