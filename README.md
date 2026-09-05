@@ -19,20 +19,20 @@ _Created: 11-10-2025 · Last updated: 11-07-2026_
 - **Электронная версия 2.0:** подготовлена **Н. П. Лихушиной**, апрель 2008 г. —
   исправленные переводы отдельных слов, глагольные корни в ступени *guṇa*, приложенный
   русско-санскритский словарик. Полный текст благодарностей и предисловия —
-  в [`docs/intro.mdx`](https://github.com/alexander-myltsev/buhler-sanskrit-book/blob/main/docs/intro.mdx).
+  в [`docs/intro.mdx`](https://github.com/gasyoun/buhler-sanskrit-book/blob/main/docs/intro.mdx).
 
 ## Охват
 
 Оцифровано **20 из 48 уроков** —
-[`docs/lesson1.mdx`](https://github.com/alexander-myltsev/buhler-sanskrit-book/blob/main/docs/lesson1.mdx) …
-[`docs/lesson20.mdx`](https://github.com/alexander-myltsev/buhler-sanskrit-book/blob/main/docs/lesson20.mdx)
-плюс [`docs/intro.mdx`](https://github.com/alexander-myltsev/buhler-sanskrit-book/blob/main/docs/intro.mdx).
+[`docs/lesson1.mdx`](https://github.com/gasyoun/buhler-sanskrit-book/blob/main/docs/lesson1.mdx) …
+[`docs/lesson20.mdx`](https://github.com/gasyoun/buhler-sanskrit-book/blob/main/docs/lesson20.mdx)
+плюс [`docs/intro.mdx`](https://github.com/gasyoun/buhler-sanskrit-book/blob/main/docs/intro.mdx).
 Уроки 21–48 пока не оцифрованы.
 
 Словарь к упражнениям — четыре TSV-файла (глаголы / существительные / прилагательные /
-прочее) в [`src/dictionary/`](https://github.com/alexander-myltsev/buhler-sanskrit-book/tree/main/src/dictionary),
+прочее) в [`src/dictionary/`](https://github.com/gasyoun/buhler-sanskrit-book/tree/main/src/dictionary),
 схема `id⇥word⇥gender⇥translation⇥lesson⇥tag`, рендерится компонентом
-[`Dictionary.tsx`](https://github.com/alexander-myltsev/buhler-sanskrit-book/blob/main/src/components/Dictionary.tsx).
+[`Dictionary.tsx`](https://github.com/gasyoun/buhler-sanskrit-book/blob/main/src/components/Dictionary.tsx).
 
 ## Разметка в MDX
 
@@ -40,11 +40,11 @@ _Created: 11-10-2025 · Last updated: 11-07-2026_
 
 | Конструкция | Назначение |
 |---|---|
-| `<Sanscript text="…" from="slp1" to="devanagari"/>` | транслитерация из SLP1 в деванагари ([`Sanscript.tsx`](https://github.com/alexander-myltsev/buhler-sanskrit-book/blob/main/src/components/Sanscript.tsx)) |
-| `<Latin text="…"/>` | латинская транслитерация IAST курсивом ([`Latin.tsx`](https://github.com/alexander-myltsev/buhler-sanskrit-book/blob/main/src/components/Latin.tsx)) |
-| `<Dictionary/>` | таблицы словаря из TSV ([`Dictionary.tsx`](https://github.com/alexander-myltsev/buhler-sanskrit-book/blob/main/src/components/Dictionary.tsx)) |
-| `__GT_термин__` | стилизованный грамматический термин ([`grammaticalTermShorthand`](https://github.com/alexander-myltsev/buhler-sanskrit-book/blob/main/src/remark/grammaticalTermShorthand.ts)) |
-| `__GTS_slp1__` | «देवनागरी (IAST)» из SLP1 ([`grammaticalTermSanskritShorthand`](https://github.com/alexander-myltsev/buhler-sanskrit-book/blob/main/src/remark/grammaticalTermSanskritShorthand.ts)) |
+| `<Sanscript text="…" from="slp1" to="devanagari"/>` | транслитерация из SLP1 в деванагари ([`Sanscript.tsx`](https://github.com/gasyoun/buhler-sanskrit-book/blob/main/src/components/Sanscript.tsx)) |
+| `<Latin text="…"/>` | латинская транслитерация IAST курсивом ([`Latin.tsx`](https://github.com/gasyoun/buhler-sanskrit-book/blob/main/src/components/Latin.tsx)) |
+| `<Dictionary/>` | таблицы словаря из TSV ([`Dictionary.tsx`](https://github.com/gasyoun/buhler-sanskrit-book/blob/main/src/components/Dictionary.tsx)) |
+| `__GT_термин__` | стилизованный грамматический термин ([`grammaticalTermShorthand`](https://github.com/gasyoun/buhler-sanskrit-book/blob/main/src/remark/grammaticalTermShorthand.ts)) |
+| `__GTS_slp1__` | «देवनागरी (IAST)» из SLP1 ([`grammaticalTermSanskritShorthand`](https://github.com/gasyoun/buhler-sanskrit-book/blob/main/src/remark/grammaticalTermSanskritShorthand.ts)) |
 
 Транслитерация выполняется через
 [`@indic-transliteration/sanscript`](https://github.com/indic-transliteration/sanscript.js).
@@ -66,11 +66,11 @@ npm run serve     # локально проверить готовую сбор�
 ## Лицензия и атрибуция
 
 Текст уроков и упражнений и словарные данные (каталоги
-[`docs/`](https://github.com/alexander-myltsev/buhler-sanskrit-book/tree/main/docs) и
-[`src/dictionary/`](https://github.com/alexander-myltsev/buhler-sanskrit-book/tree/main/src/dictionary))
+[`docs/`](https://github.com/gasyoun/buhler-sanskrit-book/tree/main/docs) и
+[`src/dictionary/`](https://github.com/gasyoun/buhler-sanskrit-book/tree/main/src/dictionary))
 распространяются по лицензии
 [Creative Commons Attribution 4.0 International (CC BY 4.0)](https://creativecommons.org/licenses/by/4.0/deed.ru) —
-см. [`LICENSE`](https://github.com/alexander-myltsev/buhler-sanskrit-book/blob/main/LICENSE).
+см. [`LICENSE`](https://github.com/gasyoun/buhler-sanskrit-book/blob/main/LICENSE).
 
 При использовании текста указывайте:
 
