@@ -1,6 +1,6 @@
 # CLAUDE.md
 
-_Created: 28-02-2026 · Last updated: 16-08-2026_
+_Created: 28-02-2026 · Last updated: 05-09-2026_
 
 `buhler-sanskrit-book` is a **Docusaurus 3** static site for Bühler's
 Sanskrit grammar — 20 lessons in Russian with Sanskrit examples — deployed
