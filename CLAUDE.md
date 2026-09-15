@@ -1,6 +1,6 @@
 # CLAUDE.md
 
-_Created: 28-02-2026 · Last updated: 05-09-2026_
+_Created: 28-02-2026 · Last updated: 15-09-2026_
 
 `buhler-sanskrit-book` is a **Docusaurus 3** static site for Bühler's
 Sanskrit grammar — 20 lessons in Russian with Sanskrit examples — deployed
@@ -56,5 +56,9 @@ Danger facts:
 [Uprava DANGER_FACTS.md](https://github.com/gasyoun/Uprava/blob/main/DANGER_FACTS.md)
 and the generated block of
 [AGENTS.md](https://github.com/gasyoun/buhler-sanskrit-book/blob/main/AGENTS.md).
+
+## Memory store
+
+This repo keeps a committed memory store at [`.claude/projects/buhler-sanskrit-book/memory/`](https://github.com/gasyoun/buhler-sanskrit-book/tree/main/.claude/projects/buhler-sanskrit-book/memory) per the org Memory-routing rule ([`/danger-memory`](https://github.com/gasyoun/claude-config/blob/main/commands/danger-memory.md)) — write dangerous/durable facts there and index each in its `MEMORY.md` (H4547).
 
 _Dr. Mārcis Gasūns_
