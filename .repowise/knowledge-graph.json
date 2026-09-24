@@ -1,0 +1,1737 @@
+{
+  "version": "1.0.0",
+  "schema_version": 1,
+  "project": {
+    "name": "buhler-sanskrit-book",
+    "is_monorepo": false,
+    "total_files": 58,
+    "entry_points": [],
+    "tech_stack": [
+      {
+        "name": "React",
+        "version": "19.0.0",
+        "category": "framework"
+      },
+      {
+        "name": "Node.js",
+        "version": ">=20.0",
+        "category": "language"
+      },
+      {
+        "name": "TypeScript",
+        "version": "5.6.2",
+        "category": "language"
+      }
+    ],
+    "entry_candidates": [],
+    "graph_mode": "structural"
+  },
+  "nodes": [
+    {
+      "id": "file:.ai_state.md",
+      "type": "document",
+      "filePath": ".ai_state.md",
+      "language": "markdown",
+      "symbolCount": 0,
+      "lineCount": 35,
+      "complexity": "simple",
+      "pagerank": 0.009431,
+      "communityId": 7,
+      "tags": [],
+      "summary": "Documentation: .ai_state.md."
+    },
+    {
+      "id": "file:.githooks/pre-commit",
+      "type": "file",
+      "filePath": ".githooks/pre-commit",
+      "language": "shell",
+      "symbolCount": 0,
+      "lineCount": 55,
+      "complexity": "simple",
+      "pagerank": 0.009431,
+      "communityId": 8,
+      "tags": [],
+      "summary": "Config module pre-commit."
+    },
+    {
+      "id": "file:.github/dependabot.yml",
+      "type": "config",
+      "filePath": ".github/dependabot.yml",
+      "language": "yaml",
+      "symbolCount": 0,
+      "lineCount": 10,
+      "complexity": "simple",
+      "pagerank": 0.009431,
+      "communityId": 9,
+      "tags": [
+        "config"
+      ],
+      "summary": "Configuration file: dependabot.yml."
+    },
+    {
+      "id": "file:.github/workflows/dependabot-auto-merge.yml",
+      "type": "pipeline",
+      "filePath": ".github/workflows/dependabot-auto-merge.yml",
+      "language": "yaml",
+      "symbolCount": 0,
+      "lineCount": 30,
+      "complexity": "simple",
+      "pagerank": 0.009431,
+      "communityId": 10,
+      "tags": [
+        "config",
+        "ci"
+      ],
+      "summary": "GitHub Actions CI/CD workflow definition."
+    },
+    {
+      "id": "file:.github/workflows/test.yml",
+      "type": "pipeline",
+      "filePath": ".github/workflows/test.yml",
+      "language": "yaml",
+      "symbolCount": 0,
+      "lineCount": 36,
+      "complexity": "simple",
+      "pagerank": 0.009431,
+      "communityId": 49,
+      "tags": [
+        "test",
+        "config",
+        "ci"
+      ],
+      "summary": "GitHub Actions CI/CD workflow definition."
+    },
+    {
+      "id": "file:.pre-commit-config.yaml",
+      "type": "config",
+      "filePath": ".pre-commit-config.yaml",
+      "language": "yaml",
+      "symbolCount": 0,
+      "lineCount": 7,
+      "complexity": "simple",
+      "pagerank": 0.009431,
+      "communityId": 11,
+      "tags": [
+        "config"
+      ],
+      "summary": "Pre-commit hook definitions run before each commit."
+    },
+    {
+      "id": "file:.prettierrc.json",
+      "type": "config",
+      "filePath": ".prettierrc.json",
+      "language": "json",
+      "symbolCount": 0,
+      "lineCount": 0,
+      "complexity": "simple",
+      "pagerank": 0.009431,
+      "communityId": 12,
+      "tags": [
+        "config"
+      ],
+      "summary": "Configuration file: .prettierrc.json."
+    },
+    {
+      "id": "file:AGENTS.md",
+      "type": "document",
+      "filePath": "AGENTS.md",
+      "language": "markdown",
+      "symbolCount": 0,
+      "lineCount": 62,
+      "complexity": "simple",
+      "pagerank": 0.009431,
+      "communityId": 13,
+      "tags": [],
+      "summary": "Documentation: AGENTS.md."
+    },
+    {
+      "id": "file:CLAUDE.md",
+      "type": "document",
+      "filePath": "CLAUDE.md",
+      "language": "markdown",
+      "symbolCount": 0,
+      "lineCount": 67,
+      "complexity": "simple",
+      "pagerank": 0.009431,
+      "communityId": 14,
+      "tags": [],
+      "summary": "Repository instructions and context for AI coding agents."
+    },
+    {
+      "id": "file:README.md",
+      "type": "document",
+      "filePath": "README.md",
+      "language": "markdown",
+      "symbolCount": 0,
+      "lineCount": 157,
+      "complexity": "moderate",
+      "pagerank": 0.009431,
+      "communityId": 15,
+      "tags": [],
+      "summary": "Project overview and entry point for new readers."
+    },
+    {
+      "id": "file:docs/intro.mdx",
+      "type": "file",
+      "filePath": "docs/intro.mdx",
+      "language": "markdown",
+      "symbolCount": 0,
+      "lineCount": 71,
+      "complexity": "simple",
+      "pagerank": 0.009431,
+      "communityId": 16,
+      "tags": [],
+      "summary": "Docs & Tooling module intro."
+    },
+    {
+      "id": "file:docs/lesson1.mdx",
+      "type": "file",
+      "filePath": "docs/lesson1.mdx",
+      "language": "markdown",
+      "symbolCount": 0,
+      "lineCount": 99,
+      "complexity": "simple",
+      "pagerank": 0.009431,
+      "communityId": 17,
+      "tags": [],
+      "summary": "Docs & Tooling module lesson1."
+    },
+    {
+      "id": "file:docs/lesson10.mdx",
+      "type": "file",
+      "filePath": "docs/lesson10.mdx",
+      "language": "markdown",
+      "symbolCount": 0,
+      "lineCount": 158,
+      "complexity": "moderate",
+      "pagerank": 0.009431,
+      "communityId": 18,
+      "tags": [],
+      "summary": "Docs & Tooling module lesson10."
+    },
+    {
+      "id": "file:docs/lesson11.mdx",
+      "type": "file",
+      "filePath": "docs/lesson11.mdx",
+      "language": "markdown",
+      "symbolCount": 0,
+      "lineCount": 179,
+      "complexity": "moderate",
+      "pagerank": 0.009431,
+      "communityId": 19,
+      "tags": [],
+      "summary": "Docs & Tooling module lesson11."
+    },
+    {
+      "id": "file:docs/lesson12.mdx",
+      "type": "file",
+      "filePath": "docs/lesson12.mdx",
+      "language": "markdown",
+      "symbolCount": 0,
+      "lineCount": 142,
+      "complexity": "moderate",
+      "pagerank": 0.009431,
+      "communityId": 20,
+      "tags": [],
+      "summary": "Docs & Tooling module lesson12."
+    },
+    {
+      "id": "file:docs/lesson13.mdx",
+      "type": "file",
+      "filePath": "docs/lesson13.mdx",
+      "language": "markdown",
+      "symbolCount": 0,
+      "lineCount": 146,
+      "complexity": "moderate",
+      "pagerank": 0.009431,
+      "communityId": 21,
+      "tags": [],
+      "summary": "Docs & Tooling module lesson13."
+    },
+    {
+      "id": "file:docs/lesson14.mdx",
+      "type": "file",
+      "filePath": "docs/lesson14.mdx",
+      "language": "markdown",
+      "symbolCount": 0,
+      "lineCount": 156,
+      "complexity": "moderate",
+      "pagerank": 0.009431,
+      "communityId": 22,
+      "tags": [],
+      "summary": "Docs & Tooling module lesson14."
+    },
+    {
+      "id": "file:docs/lesson15.mdx",
+      "type": "file",
+      "filePath": "docs/lesson15.mdx",
+      "language": "markdown",
+      "symbolCount": 0,
+      "lineCount": 155,
+      "complexity": "moderate",
+      "pagerank": 0.009431,
+      "communityId": 23,
+      "tags": [],
+      "summary": "Docs & Tooling module lesson15."
+    },
+    {
+      "id": "file:docs/lesson16.mdx",
+      "type": "file",
+      "filePath": "docs/lesson16.mdx",
+      "language": "markdown",
+      "symbolCount": 0,
+      "lineCount": 186,
+      "complexity": "moderate",
+      "pagerank": 0.009431,
+      "communityId": 24,
+      "tags": [],
+      "summary": "Docs & Tooling module lesson16."
+    },
+    {
+      "id": "file:docs/lesson17.mdx",
+      "type": "file",
+      "filePath": "docs/lesson17.mdx",
+      "language": "markdown",
+      "symbolCount": 0,
+      "lineCount": 161,
+      "complexity": "moderate",
+      "pagerank": 0.009431,
+      "communityId": 25,
+      "tags": [],
+      "summary": "Docs & Tooling module lesson17."
+    },
+    {
+      "id": "file:docs/lesson18.mdx",
+      "type": "file",
+      "filePath": "docs/lesson18.mdx",
+      "language": "markdown",
+      "symbolCount": 0,
+      "lineCount": 202,
+      "complexity": "moderate",
+      "pagerank": 0.009431,
+      "communityId": 26,
+      "tags": [],
+      "summary": "Docs & Tooling module lesson18."
+    },
+    {
+      "id": "file:docs/lesson19.mdx",
+      "type": "file",
+      "filePath": "docs/lesson19.mdx",
+      "language": "markdown",
+      "symbolCount": 0,
+      "lineCount": 256,
+      "complexity": "moderate",
+      "pagerank": 0.009431,
+      "communityId": 27,
+      "tags": [],
+      "summary": "Docs & Tooling module lesson19."
+    },
+    {
+      "id": "file:docs/lesson2.mdx",
+      "type": "file",
+      "filePath": "docs/lesson2.mdx",
+      "language": "markdown",
+      "symbolCount": 0,
+      "lineCount": 193,
+      "complexity": "moderate",
+      "pagerank": 0.009431,
+      "communityId": 28,
+      "tags": [],
+      "summary": "Docs & Tooling module lesson2."
+    },
+    {
+      "id": "file:docs/lesson20.mdx",
+      "type": "file",
+      "filePath": "docs/lesson20.mdx",
+      "language": "markdown",
+      "symbolCount": 0,
+      "lineCount": 230,
+      "complexity": "moderate",
+      "pagerank": 0.009431,
+      "communityId": 29,
+      "tags": [],
+      "summary": "Docs & Tooling module lesson20."
+    },
+    {
+      "id": "file:docs/lesson3.mdx",
+      "type": "file",
+      "filePath": "docs/lesson3.mdx",
+      "language": "markdown",
+      "symbolCount": 0,
+      "lineCount": 139,
+      "complexity": "moderate",
+      "pagerank": 0.009431,
+      "communityId": 30,
+      "tags": [],
+      "summary": "Docs & Tooling module lesson3."
+    },
+    {
+      "id": "file:docs/lesson4.mdx",
+      "type": "file",
+      "filePath": "docs/lesson4.mdx",
+      "language": "markdown",
+      "symbolCount": 0,
+      "lineCount": 222,
+      "complexity": "moderate",
+      "pagerank": 0.009431,
+      "communityId": 31,
+      "tags": [],
+      "summary": "Docs & Tooling module lesson4."
+    },
+    {
+      "id": "file:docs/lesson5.mdx",
+      "type": "file",
+      "filePath": "docs/lesson5.mdx",
+      "language": "markdown",
+      "symbolCount": 0,
+      "lineCount": 131,
+      "complexity": "moderate",
+      "pagerank": 0.009431,
+      "communityId": 32,
+      "tags": [],
+      "summary": "Docs & Tooling module lesson5."
+    },
+    {
+      "id": "file:docs/lesson6.mdx",
+      "type": "file",
+      "filePath": "docs/lesson6.mdx",
+      "language": "markdown",
+      "symbolCount": 0,
+      "lineCount": 156,
+      "complexity": "moderate",
+      "pagerank": 0.009431,
+      "communityId": 33,
+      "tags": [],
+      "summary": "Docs & Tooling module lesson6."
+    },
+    {
+      "id": "file:docs/lesson7.mdx",
+      "type": "file",
+      "filePath": "docs/lesson7.mdx",
+      "language": "markdown",
+      "symbolCount": 0,
+      "lineCount": 131,
+      "complexity": "moderate",
+      "pagerank": 0.009431,
+      "communityId": 34,
+      "tags": [],
+      "summary": "Docs & Tooling module lesson7."
+    },
+    {
+      "id": "file:docs/lesson8.mdx",
+      "type": "file",
+      "filePath": "docs/lesson8.mdx",
+      "language": "markdown",
+      "symbolCount": 0,
+      "lineCount": 173,
+      "complexity": "moderate",
+      "pagerank": 0.009431,
+      "communityId": 35,
+      "tags": [],
+      "summary": "Docs & Tooling module lesson8."
+    },
+    {
+      "id": "file:docs/lesson9.mdx",
+      "type": "file",
+      "filePath": "docs/lesson9.mdx",
+      "language": "markdown",
+      "symbolCount": 0,
+      "lineCount": 181,
+      "complexity": "moderate",
+      "pagerank": 0.009431,
+      "communityId": 36,
+      "tags": [],
+      "summary": "Docs & Tooling module lesson9."
+    },
+    {
+      "id": "file:docs/topics.mdx",
+      "type": "file",
+      "filePath": "docs/topics.mdx",
+      "language": "markdown",
+      "symbolCount": 0,
+      "lineCount": 3,
+      "complexity": "simple",
+      "pagerank": 0.009431,
+      "communityId": 37,
+      "tags": [],
+      "summary": "Docs & Tooling module topics."
+    },
+    {
+      "id": "file:docusaurus.config.ts",
+      "type": "file",
+      "filePath": "docusaurus.config.ts",
+      "language": "typescript",
+      "symbolCount": 1,
+      "lineCount": 127,
+      "complexity": "moderate",
+      "pagerank": 0.009431,
+      "communityId": 0,
+      "tags": [],
+      "summary": "Application module docusaurus.config (1 symbols).",
+      "primaryOwner": "Alex Myltsev"
+    },
+    {
+      "id": "file:package.json",
+      "type": "config",
+      "filePath": "package.json",
+      "language": "json",
+      "symbolCount": 0,
+      "lineCount": 43,
+      "complexity": "simple",
+      "pagerank": 0.009431,
+      "communityId": 44,
+      "tags": [
+        "config"
+      ],
+      "summary": "Node package manifest: dependencies, scripts, and metadata."
+    },
+    {
+      "id": "file:scripts/align-rst-tables.mjs",
+      "type": "file",
+      "filePath": "scripts/align-rst-tables.mjs",
+      "language": "javascript",
+      "symbolCount": 6,
+      "lineCount": 97,
+      "complexity": "moderate",
+      "pagerank": 0.009431,
+      "communityId": 4,
+      "tags": [],
+      "summary": "Docs & Tooling module align-rst-tables defining serialize, splitRow, modelFromGrid.",
+      "primaryOwner": "Alex Myltsev"
+    },
+    {
+      "id": "file:sidebars.ts",
+      "type": "file",
+      "filePath": "sidebars.ts",
+      "language": "typescript",
+      "symbolCount": 1,
+      "lineCount": 22,
+      "complexity": "simple",
+      "pagerank": 0.009431,
+      "communityId": 5,
+      "tags": [],
+      "summary": "Application module sidebars (1 symbols).",
+      "primaryOwner": "Alex Myltsev"
+    },
+    {
+      "id": "file:src/components/Dictionary.tsx",
+      "type": "file",
+      "filePath": "src/components/Dictionary.tsx",
+      "language": "typescript",
+      "symbolCount": 3,
+      "lineCount": 130,
+      "complexity": "moderate",
+      "pagerank": 0.009431,
+      "communityId": 3,
+      "tags": [],
+      "summary": "UI module Dictionary defining DictionaryProps, parseDictionaryTsv, Dictionary.",
+      "primaryOwner": "Alex Myltsev"
+    },
+    {
+      "id": "file:src/components/HomepageFeatures/index.tsx",
+      "type": "file",
+      "filePath": "src/components/HomepageFeatures/index.tsx",
+      "language": "typescript",
+      "symbolCount": 4,
+      "lineCount": 62,
+      "complexity": "moderate",
+      "pagerank": 0.009431,
+      "communityId": 1,
+      "tags": [
+        "entry_point"
+      ],
+      "summary": "UI module index defining Feature, HomepageFeatures.",
+      "primaryOwner": "Alex Myltsev"
+    },
+    {
+      "id": "file:src/components/Latin.tsx",
+      "type": "file",
+      "filePath": "src/components/Latin.tsx",
+      "language": "typescript",
+      "symbolCount": 2,
+      "lineCount": 13,
+      "complexity": "simple",
+      "pagerank": 0.009431,
+      "communityId": 3,
+      "tags": [],
+      "summary": "UI module Latin defining LatinProps, Latin.",
+      "primaryOwner": "Alex Myltsev"
+    },
+    {
+      "id": "file:src/components/Sanscript.tsx",
+      "type": "file",
+      "filePath": "src/components/Sanscript.tsx",
+      "language": "typescript",
+      "symbolCount": 2,
+      "lineCount": 24,
+      "complexity": "simple",
+      "pagerank": 0.009431,
+      "communityId": 0,
+      "tags": [],
+      "summary": "UI module Sanscript defining SanscriptProps, SanscriptComponent.",
+      "primaryOwner": "Alex Myltsev"
+    },
+    {
+      "id": "file:src/components/TopicIndex.tsx",
+      "type": "file",
+      "filePath": "src/components/TopicIndex.tsx",
+      "language": "typescript",
+      "symbolCount": 3,
+      "lineCount": 118,
+      "complexity": "moderate",
+      "pagerank": 0.009431,
+      "communityId": 3,
+      "tags": [],
+      "summary": "UI module TopicIndex defining TopicEntry, parseTopicsTsv, TopicIndex.",
+      "primaryOwner": "Alex Myltsev"
+    },
+    {
+      "id": "file:src/pages/index.tsx",
+      "type": "file",
+      "filePath": "src/pages/index.tsx",
+      "language": "typescript",
+      "symbolCount": 2,
+      "lineCount": 41,
+      "complexity": "simple",
+      "pagerank": 0.009431,
+      "communityId": 1,
+      "tags": [
+        "entry_point"
+      ],
+      "summary": "UI module index defining HomepageHeader, Home.",
+      "primaryOwner": "Alex Myltsev"
+    },
+    {
+      "id": "file:src/pages/markdown-page.md",
+      "type": "document",
+      "filePath": "src/pages/markdown-page.md",
+      "language": "markdown",
+      "symbolCount": 0,
+      "lineCount": 3,
+      "complexity": "simple",
+      "pagerank": 0.009431,
+      "communityId": 45,
+      "tags": [],
+      "summary": "Documentation: markdown-page.md."
+    },
+    {
+      "id": "file:src/remark/grammaticalTermSanskritShorthand.ts",
+      "type": "file",
+      "filePath": "src/remark/grammaticalTermSanskritShorthand.ts",
+      "language": "typescript",
+      "symbolCount": 1,
+      "lineCount": 18,
+      "complexity": "simple",
+      "pagerank": 0.010576,
+      "communityId": 0,
+      "tags": [],
+      "summary": "Application module grammaticalTermSanskritShorthand defining makeSanskritTermSpan.",
+      "primaryOwner": "Alex Myltsev"
+    },
+    {
+      "id": "file:src/remark/grammaticalTermShorthand.ts",
+      "type": "file",
+      "filePath": "src/remark/grammaticalTermShorthand.ts",
+      "language": "typescript",
+      "symbolCount": 0,
+      "lineCount": 5,
+      "complexity": "simple",
+      "pagerank": 0.010576,
+      "communityId": 0,
+      "tags": [],
+      "summary": "Application module grammaticalTermShorthand.",
+      "primaryOwner": "Alex Myltsev"
+    },
+    {
+      "id": "file:src/remark/rstTable.drift-guard.test.ts",
+      "type": "file",
+      "filePath": "src/remark/rstTable.drift-guard.test.ts",
+      "language": "typescript",
+      "symbolCount": 16,
+      "lineCount": 437,
+      "complexity": "complex",
+      "pagerank": 0.009431,
+      "communityId": 4,
+      "tags": [
+        "test"
+      ],
+      "summary": "Tests for rsttable.drift-guard.",
+      "primaryOwner": "M\u0101rcis Gas\u016bns"
+    },
+    {
+      "id": "file:src/remark/rstTable.test.ts",
+      "type": "file",
+      "filePath": "src/remark/rstTable.test.ts",
+      "language": "typescript",
+      "symbolCount": 1,
+      "lineCount": 28,
+      "complexity": "simple",
+      "pagerank": 0.009431,
+      "communityId": 43,
+      "tags": [
+        "test"
+      ],
+      "summary": "Tests for rsttable.",
+      "primaryOwner": "Alex Myltsev"
+    },
+    {
+      "id": "file:src/remark/rstTable.ts",
+      "type": "file",
+      "filePath": "src/remark/rstTable.ts",
+      "language": "typescript",
+      "symbolCount": 1,
+      "lineCount": 15,
+      "complexity": "simple",
+      "pagerank": 0.014584,
+      "communityId": 2,
+      "tags": [],
+      "summary": "Application module rstTable defining remarkRstTable.",
+      "primaryOwner": "Alex Myltsev"
+    },
+    {
+      "id": "file:src/remark/rstTableAst.test.ts",
+      "type": "file",
+      "filePath": "src/remark/rstTableAst.test.ts",
+      "language": "typescript",
+      "symbolCount": 1,
+      "lineCount": 61,
+      "complexity": "simple",
+      "pagerank": 0.009431,
+      "communityId": 43,
+      "tags": [
+        "test"
+      ],
+      "summary": "Tests for rsttableast.",
+      "primaryOwner": "Alex Myltsev"
+    },
+    {
+      "id": "file:src/remark/rstTableAst.ts",
+      "type": "file",
+      "filePath": "src/remark/rstTableAst.ts",
+      "language": "typescript",
+      "symbolCount": 8,
+      "lineCount": 72,
+      "complexity": "moderate",
+      "pagerank": 0.016538,
+      "communityId": 2,
+      "tags": [],
+      "summary": "Application module rstTableAst defining MdxAttr, MdxElement, el.",
+      "primaryOwner": "Alex Myltsev"
+    },
+    {
+      "id": "file:src/remark/rstTableParser.test.ts",
+      "type": "file",
+      "filePath": "src/remark/rstTableParser.test.ts",
+      "language": "typescript",
+      "symbolCount": 1,
+      "lineCount": 130,
+      "complexity": "moderate",
+      "pagerank": 0.009431,
+      "communityId": 43,
+      "tags": [
+        "test"
+      ],
+      "summary": "Tests for rsttableparser.",
+      "primaryOwner": "Alex Myltsev"
+    },
+    {
+      "id": "file:src/remark/rstTableParser.ts",
+      "type": "file",
+      "filePath": "src/remark/rstTableParser.ts",
+      "language": "typescript",
+      "symbolCount": 5,
+      "lineCount": 120,
+      "complexity": "moderate",
+      "pagerank": 0.024061,
+      "communityId": 2,
+      "tags": [],
+      "summary": "Application module rstTableParser defining RstCell, RstTableModel, isBorderLine.",
+      "primaryOwner": "Alex Myltsev"
+    },
+    {
+      "id": "file:src/remark/sanskritTextShorthand.ts",
+      "type": "file",
+      "filePath": "src/remark/sanskritTextShorthand.ts",
+      "language": "typescript",
+      "symbolCount": 1,
+      "lineCount": 21,
+      "complexity": "simple",
+      "pagerank": 0.010576,
+      "communityId": 0,
+      "tags": [],
+      "summary": "Application module sanskritTextShorthand defining makeSanskritTextSpan.",
+      "primaryOwner": "Alex Myltsev"
+    },
+    {
+      "id": "file:src/remark/shorthand.ts",
+      "type": "file",
+      "filePath": "src/remark/shorthand.ts",
+      "language": "typescript",
+      "symbolCount": 7,
+      "lineCount": 77,
+      "complexity": "moderate",
+      "pagerank": 0.02741,
+      "communityId": 0,
+      "tags": [],
+      "summary": "Application module shorthand defining ShorthandConfig, makeTextSpan, extractTextFromNode.",
+      "primaryOwner": "Alex Myltsev"
+    },
+    {
+      "id": "file:src/types/docusaurus.d.ts",
+      "type": "file",
+      "filePath": "src/types/docusaurus.d.ts",
+      "language": "typescript",
+      "symbolCount": 0,
+      "lineCount": 1,
+      "complexity": "simple",
+      "pagerank": 0.009431,
+      "communityId": 46,
+      "tags": [],
+      "summary": "Types module docusaurus.d.",
+      "primaryOwner": "Alex Myltsev"
+    },
+    {
+      "id": "file:src/types/tsv.d.ts",
+      "type": "file",
+      "filePath": "src/types/tsv.d.ts",
+      "language": "typescript",
+      "symbolCount": 0,
+      "lineCount": 2,
+      "complexity": "simple",
+      "pagerank": 0.009431,
+      "communityId": 47,
+      "tags": [],
+      "summary": "Types module tsv.d.",
+      "primaryOwner": "Alex Myltsev"
+    },
+    {
+      "id": "file:tsconfig.json",
+      "type": "config",
+      "filePath": "tsconfig.json",
+      "language": "json",
+      "symbolCount": 0,
+      "lineCount": 7,
+      "complexity": "simple",
+      "pagerank": 0.009431,
+      "communityId": 48,
+      "tags": [
+        "config"
+      ],
+      "summary": "TypeScript compiler configuration."
+    },
+    {
+      "id": "file:vitest.config.ts",
+      "type": "file",
+      "filePath": "vitest.config.ts",
+      "language": "typescript",
+      "symbolCount": 0,
+      "lineCount": 4,
+      "complexity": "simple",
+      "pagerank": 0.009431,
+      "communityId": 6,
+      "tags": [],
+      "summary": "Application module vitest.config.",
+      "primaryOwner": "Alex Myltsev"
+    },
+    {
+      "id": "function:src/remark/rstTable.ts:remarkRstTable",
+      "type": "function",
+      "filePath": "src/remark/rstTable.ts",
+      "name": "remarkRstTable",
+      "language": "typescript",
+      "tags": [],
+      "summary": ""
+    },
+    {
+      "id": "function:src/remark/rstTableAst.ts:buildTableAst",
+      "type": "function",
+      "filePath": "src/remark/rstTableAst.ts",
+      "name": "buildTableAst",
+      "language": "typescript",
+      "tags": [],
+      "summary": ""
+    },
+    {
+      "id": "function:src/remark/rstTableAst.ts:cellNode",
+      "type": "function",
+      "filePath": "src/remark/rstTableAst.ts",
+      "name": "cellNode",
+      "language": "typescript",
+      "tags": [],
+      "summary": ""
+    },
+    {
+      "id": "function:src/remark/rstTableAst.ts:el",
+      "type": "function",
+      "filePath": "src/remark/rstTableAst.ts",
+      "name": "el",
+      "language": "typescript",
+      "tags": [],
+      "summary": ""
+    },
+    {
+      "id": "function:src/remark/rstTableAst.ts:parseCellChildren",
+      "type": "function",
+      "filePath": "src/remark/rstTableAst.ts",
+      "name": "parseCellChildren",
+      "language": "typescript",
+      "tags": [],
+      "summary": ""
+    },
+    {
+      "id": "function:src/remark/rstTableAst.ts:rowNode",
+      "type": "function",
+      "filePath": "src/remark/rstTableAst.ts",
+      "name": "rowNode",
+      "language": "typescript",
+      "tags": [],
+      "summary": ""
+    },
+    {
+      "id": "function:src/remark/rstTableAst.ts:stripPositions",
+      "type": "function",
+      "filePath": "src/remark/rstTableAst.ts",
+      "name": "stripPositions",
+      "language": "typescript",
+      "tags": [],
+      "summary": ""
+    },
+    {
+      "id": "function:src/remark/rstTableParser.ts:isBorderLine",
+      "type": "function",
+      "filePath": "src/remark/rstTableParser.ts",
+      "name": "isBorderLine",
+      "language": "typescript",
+      "tags": [],
+      "summary": ""
+    },
+    {
+      "id": "function:src/remark/rstTableParser.ts:parseRstGridTable",
+      "type": "function",
+      "filePath": "src/remark/rstTableParser.ts",
+      "name": "parseRstGridTable",
+      "language": "typescript",
+      "tags": [],
+      "summary": ""
+    },
+    {
+      "id": "function:src/remark/shorthand.ts:createShorthandPlugin",
+      "type": "function",
+      "filePath": "src/remark/shorthand.ts",
+      "name": "createShorthandPlugin",
+      "language": "typescript",
+      "tags": [],
+      "summary": ""
+    },
+    {
+      "id": "function:src/remark/shorthand.ts:expandTextWithPattern",
+      "type": "function",
+      "filePath": "src/remark/shorthand.ts",
+      "name": "expandTextWithPattern",
+      "language": "typescript",
+      "tags": [],
+      "summary": ""
+    },
+    {
+      "id": "function:src/remark/shorthand.ts:extractTextFromNode",
+      "type": "function",
+      "filePath": "src/remark/shorthand.ts",
+      "name": "extractTextFromNode",
+      "language": "typescript",
+      "tags": [],
+      "summary": ""
+    },
+    {
+      "id": "function:src/remark/shorthand.ts:makeTextSpan",
+      "type": "function",
+      "filePath": "src/remark/shorthand.ts",
+      "name": "makeTextSpan",
+      "language": "typescript",
+      "tags": [],
+      "summary": ""
+    }
+  ],
+  "edges": [
+    {
+      "source": "file:docusaurus.config.ts",
+      "target": "file:external:@docusaurus/preset-classic",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:docusaurus.config.ts",
+      "target": "file:external:@docusaurus/types",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:docusaurus.config.ts",
+      "target": "file:external:prism-react-renderer",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:docusaurus.config.ts",
+      "target": "file:src/remark/grammaticalTermSanskritShorthand.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:docusaurus.config.ts",
+      "target": "file:src/remark/grammaticalTermShorthand.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:docusaurus.config.ts",
+      "target": "file:src/remark/rstTable.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:docusaurus.config.ts",
+      "target": "file:src/remark/sanskritTextShorthand.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:scripts/align-rst-tables.mjs",
+      "target": "file:external:node:fs",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:scripts/align-rst-tables.mjs",
+      "target": "file:external:node:path",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:sidebars.ts",
+      "target": "file:external:@docusaurus/plugin-content-docs",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:src/components/Dictionary.tsx",
+      "target": "file:external:@indic-transliteration/sanscript",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:src/components/Dictionary.tsx",
+      "target": "file:external:papaparse",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:src/components/Dictionary.tsx",
+      "target": "file:external:react",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:src/components/HomepageFeatures/index.tsx",
+      "target": "file:external:@theme/Heading",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:src/components/HomepageFeatures/index.tsx",
+      "target": "file:external:clsx",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:src/components/HomepageFeatures/index.tsx",
+      "target": "file:external:react",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:src/components/Latin.tsx",
+      "target": "file:external:react",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:src/components/Sanscript.tsx",
+      "target": "file:external:@indic-transliteration/sanscript",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:src/components/Sanscript.tsx",
+      "target": "file:external:react",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:src/components/TopicIndex.tsx",
+      "target": "file:external:@docusaurus/useBaseUrl",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:src/components/TopicIndex.tsx",
+      "target": "file:external:papaparse",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:src/components/TopicIndex.tsx",
+      "target": "file:external:react",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:src/pages/index.tsx",
+      "target": "file:external:@docusaurus/Link",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:src/pages/index.tsx",
+      "target": "file:external:@docusaurus/useDocusaurusContext",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:src/pages/index.tsx",
+      "target": "file:external:@site/src/components/HomepageFeatures",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:src/pages/index.tsx",
+      "target": "file:external:@theme/Heading",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:src/pages/index.tsx",
+      "target": "file:external:@theme/Layout",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:src/pages/index.tsx",
+      "target": "file:external:clsx",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:src/pages/index.tsx",
+      "target": "file:external:react",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:src/remark/grammaticalTermSanskritShorthand.ts",
+      "target": "file:external:@indic-transliteration/sanscript",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:src/remark/grammaticalTermSanskritShorthand.ts",
+      "target": "file:src/remark/shorthand.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:src/remark/grammaticalTermShorthand.ts",
+      "target": "file:src/remark/shorthand.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:src/remark/rstTable.drift-guard.test.ts",
+      "target": "file:external:node:fs",
+      "type": "tested_by",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:src/remark/rstTable.drift-guard.test.ts",
+      "target": "file:external:node:path",
+      "type": "tested_by",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:src/remark/rstTable.drift-guard.test.ts",
+      "target": "file:external:node:url",
+      "type": "tested_by",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:src/remark/rstTable.drift-guard.test.ts",
+      "target": "file:external:vitest",
+      "type": "tested_by",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:src/remark/rstTable.drift-guard.test.ts",
+      "target": "file:src/remark/rstTableAst.ts",
+      "type": "tested_by",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:src/remark/rstTable.drift-guard.test.ts",
+      "target": "file:src/remark/rstTableParser.ts",
+      "type": "tested_by",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:src/remark/rstTable.test.ts",
+      "target": "file:external:vitest",
+      "type": "tested_by",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:src/remark/rstTable.test.ts",
+      "target": "file:src/remark/rstTable.ts",
+      "type": "tested_by",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:src/remark/rstTable.ts",
+      "target": "file:external:unist",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:src/remark/rstTable.ts",
+      "target": "file:external:unist-util-visit",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:src/remark/rstTable.ts",
+      "target": "file:src/remark/rstTableAst.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:src/remark/rstTable.ts",
+      "target": "file:src/remark/rstTableParser.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:src/remark/rstTable.ts",
+      "target": "function:src/remark/rstTable.ts:remarkRstTable",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:src/remark/rstTableAst.test.ts",
+      "target": "file:external:vitest",
+      "type": "tested_by",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:src/remark/rstTableAst.test.ts",
+      "target": "file:src/remark/rstTableAst.ts",
+      "type": "tested_by",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:src/remark/rstTableAst.test.ts",
+      "target": "file:src/remark/rstTableParser.ts",
+      "type": "tested_by",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:src/remark/rstTableAst.ts",
+      "target": "file:external:mdast-util-from-markdown",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:src/remark/rstTableAst.ts",
+      "target": "file:external:mdast-util-mdx",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:src/remark/rstTableAst.ts",
+      "target": "file:external:micromark-extension-mdxjs",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:src/remark/rstTableAst.ts",
+      "target": "file:src/remark/rstTableParser.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:src/remark/rstTableAst.ts",
+      "target": "function:src/remark/rstTableAst.ts:buildTableAst",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:src/remark/rstTableAst.ts",
+      "target": "function:src/remark/rstTableAst.ts:cellNode",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:src/remark/rstTableAst.ts",
+      "target": "function:src/remark/rstTableAst.ts:el",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:src/remark/rstTableAst.ts",
+      "target": "function:src/remark/rstTableAst.ts:parseCellChildren",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:src/remark/rstTableAst.ts",
+      "target": "function:src/remark/rstTableAst.ts:rowNode",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:src/remark/rstTableAst.ts",
+      "target": "function:src/remark/rstTableAst.ts:stripPositions",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:src/remark/rstTableParser.test.ts",
+      "target": "file:external:vitest",
+      "type": "tested_by",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:src/remark/rstTableParser.test.ts",
+      "target": "file:src/remark/rstTableParser.ts",
+      "type": "tested_by",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:src/remark/rstTableParser.ts",
+      "target": "function:src/remark/rstTableParser.ts:isBorderLine",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:src/remark/rstTableParser.ts",
+      "target": "function:src/remark/rstTableParser.ts:parseRstGridTable",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:src/remark/sanskritTextShorthand.ts",
+      "target": "file:external:@indic-transliteration/sanscript",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:src/remark/sanskritTextShorthand.ts",
+      "target": "file:src/remark/shorthand.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:src/remark/shorthand.ts",
+      "target": "file:external:unist",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:src/remark/shorthand.ts",
+      "target": "file:external:unist-util-visit",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:src/remark/shorthand.ts",
+      "target": "function:src/remark/shorthand.ts:createShorthandPlugin",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:src/remark/shorthand.ts",
+      "target": "function:src/remark/shorthand.ts:expandTextWithPattern",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:src/remark/shorthand.ts",
+      "target": "function:src/remark/shorthand.ts:extractTextFromNode",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:src/remark/shorthand.ts",
+      "target": "function:src/remark/shorthand.ts:makeTextSpan",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:vitest.config.ts",
+      "target": "file:external:vitest/config",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 1.0
+    }
+  ],
+  "layers": [
+    {
+      "id": "layer:ui",
+      "name": "UI",
+      "description": "",
+      "nodeIds": [
+        "file:src/components/Dictionary.tsx",
+        "file:src/components/HomepageFeatures/index.tsx",
+        "file:src/components/Latin.tsx",
+        "file:src/components/Sanscript.tsx",
+        "file:src/components/TopicIndex.tsx",
+        "file:src/pages/index.tsx",
+        "file:src/pages/markdown-page.md"
+      ],
+      "display_order": 0,
+      "order_basis": "canonical"
+    },
+    {
+      "id": "layer:application",
+      "name": "Application",
+      "description": "",
+      "nodeIds": [
+        "file:.ai_state.md",
+        "file:.pre-commit-config.yaml",
+        "file:.prettierrc.json",
+        "file:AGENTS.md",
+        "file:CLAUDE.md",
+        "file:README.md",
+        "file:docusaurus.config.ts",
+        "file:package.json",
+        "file:sidebars.ts",
+        "file:src/remark/grammaticalTermSanskritShorthand.ts",
+        "file:src/remark/grammaticalTermShorthand.ts",
+        "file:src/remark/rstTable.ts",
+        "file:src/remark/rstTableAst.ts",
+        "file:src/remark/rstTableParser.ts",
+        "file:src/remark/sanskritTextShorthand.ts",
+        "file:src/remark/shorthand.ts",
+        "file:tsconfig.json",
+        "file:vitest.config.ts"
+      ],
+      "display_order": 1,
+      "order_basis": "canonical"
+    },
+    {
+      "id": "layer:types",
+      "name": "Types",
+      "description": "",
+      "nodeIds": [
+        "file:src/types/docusaurus.d.ts",
+        "file:src/types/tsv.d.ts"
+      ],
+      "display_order": 2,
+      "order_basis": "canonical"
+    },
+    {
+      "id": "layer:config",
+      "name": "Config",
+      "description": "",
+      "nodeIds": [
+        "file:.githooks/pre-commit",
+        "file:.github/dependabot.yml",
+        "file:.github/workflows/dependabot-auto-merge.yml"
+      ],
+      "display_order": 3,
+      "order_basis": "canonical"
+    },
+    {
+      "id": "layer:docs-tooling",
+      "name": "Docs & Tooling",
+      "description": "",
+      "nodeIds": [
+        "file:docs/intro.mdx",
+        "file:docs/lesson1.mdx",
+        "file:docs/lesson10.mdx",
+        "file:docs/lesson11.mdx",
+        "file:docs/lesson12.mdx",
+        "file:docs/lesson13.mdx",
+        "file:docs/lesson14.mdx",
+        "file:docs/lesson15.mdx",
+        "file:docs/lesson16.mdx",
+        "file:docs/lesson17.mdx",
+        "file:docs/lesson18.mdx",
+        "file:docs/lesson19.mdx",
+        "file:docs/lesson2.mdx",
+        "file:docs/lesson20.mdx",
+        "file:docs/lesson3.mdx",
+        "file:docs/lesson4.mdx",
+        "file:docs/lesson5.mdx",
+        "file:docs/lesson6.mdx",
+        "file:docs/lesson7.mdx",
+        "file:docs/lesson8.mdx",
+        "file:docs/lesson9.mdx",
+        "file:docs/topics.mdx",
+        "file:scripts/align-rst-tables.mjs"
+      ],
+      "display_order": 4,
+      "order_basis": "canonical"
+    },
+    {
+      "id": "layer:test",
+      "name": "Test",
+      "description": "",
+      "nodeIds": [
+        "file:.github/workflows/test.yml",
+        "file:src/remark/rstTable.drift-guard.test.ts",
+        "file:src/remark/rstTable.test.ts",
+        "file:src/remark/rstTableAst.test.ts",
+        "file:src/remark/rstTableParser.test.ts"
+      ],
+      "display_order": 5,
+      "order_basis": "canonical"
+    }
+  ],
+  "tour": [
+    {
+      "order": 1,
+      "target_path": "README.md",
+      "page_type": "repo_overview",
+      "title": "README.md",
+      "depth": 0,
+      "kind": "overview",
+      "reason": "Start here for the end-to-end picture before diving into the code.",
+      "layer_id": "layer:application"
+    },
+    {
+      "order": 2,
+      "target_path": "src/remark/shorthand.ts",
+      "page_type": "file_page",
+      "title": "shorthand.ts",
+      "depth": 0,
+      "kind": "code",
+      "reason": "The best-connected file by the evidence available (change history and references). Import analysis isn't supported for Markdown yet, so the walk follows the repo's structure.",
+      "layer_id": "layer:application"
+    },
+    {
+      "order": 3,
+      "target_path": "src/remark/rstTableParser.ts",
+      "page_type": "file_page",
+      "title": "rstTableParser.ts",
+      "depth": 0,
+      "kind": "code",
+      "reason": "The face of src/ \u2014 14 code files live here.",
+      "layer_id": "layer:application"
+    },
+    {
+      "order": 4,
+      "target_path": "docusaurus.config.ts",
+      "page_type": "file_page",
+      "title": "docusaurus.config.ts",
+      "depth": 0,
+      "kind": "code",
+      "reason": "The face of the repository root \u2014 3 code files live here.",
+      "layer_id": "layer:application"
+    },
+    {
+      "order": 5,
+      "target_path": "scripts/align-rst-tables.mjs",
+      "page_type": "file_page",
+      "title": "align-rst-tables.mjs",
+      "depth": 0,
+      "kind": "code",
+      "reason": "The face of scripts/ \u2014 1 code file lives here.",
+      "layer_id": "layer:docs-tooling"
+    },
+    {
+      "order": 6,
+      "target_path": "src/remark/rstTable.drift-guard.test.ts",
+      "page_type": "file_page",
+      "title": "rstTable.drift-guard.test.ts",
+      "depth": 1,
+      "kind": "code",
+      "reason": "The test suite \u2014 how the system's behavior is verified (the TypeScript test suite lives alongside it).",
+      "layer_id": "layer:test"
+    }
+  ],
+  "modules": [
+    {
+      "id": "module:src",
+      "name": "UI",
+      "path": "src",
+      "layerId": "layer:ui",
+      "nodeIds": [
+        "file:src/components/Dictionary.tsx",
+        "file:src/components/HomepageFeatures/index.tsx",
+        "file:src/components/Latin.tsx",
+        "file:src/components/Sanscript.tsx",
+        "file:src/components/TopicIndex.tsx",
+        "file:src/pages/index.tsx",
+        "file:src/pages/markdown-page.md"
+      ],
+      "wholeLayer": true,
+      "language": "typescript"
+    },
+    {
+      "id": "module:application",
+      "name": "Application",
+      "path": "",
+      "layerId": "layer:application",
+      "nodeIds": [
+        "file:.ai_state.md",
+        "file:.pre-commit-config.yaml",
+        "file:.prettierrc.json",
+        "file:AGENTS.md",
+        "file:CLAUDE.md",
+        "file:README.md",
+        "file:docusaurus.config.ts",
+        "file:package.json",
+        "file:sidebars.ts",
+        "file:src/remark/grammaticalTermSanskritShorthand.ts",
+        "file:src/remark/grammaticalTermShorthand.ts",
+        "file:src/remark/rstTable.ts",
+        "file:src/remark/rstTableAst.ts",
+        "file:src/remark/rstTableParser.ts",
+        "file:src/remark/sanskritTextShorthand.ts",
+        "file:src/remark/shorthand.ts",
+        "file:tsconfig.json",
+        "file:vitest.config.ts"
+      ],
+      "wholeLayer": true,
+      "language": "typescript"
+    },
+    {
+      "id": "module:config",
+      "name": "Config",
+      "path": "",
+      "layerId": "layer:config",
+      "nodeIds": [
+        "file:.githooks/pre-commit",
+        "file:.github/dependabot.yml",
+        "file:.github/workflows/dependabot-auto-merge.yml"
+      ],
+      "wholeLayer": true,
+      "language": "yaml"
+    },
+    {
+      "id": "module:docs-tooling",
+      "name": "Docs & Tooling",
+      "path": "",
+      "layerId": "layer:docs-tooling",
+      "nodeIds": [
+        "file:docs/intro.mdx",
+        "file:docs/lesson1.mdx",
+        "file:docs/lesson10.mdx",
+        "file:docs/lesson11.mdx",
+        "file:docs/lesson12.mdx",
+        "file:docs/lesson13.mdx",
+        "file:docs/lesson14.mdx",
+        "file:docs/lesson15.mdx",
+        "file:docs/lesson16.mdx",
+        "file:docs/lesson17.mdx",
+        "file:docs/lesson18.mdx",
+        "file:docs/lesson19.mdx",
+        "file:docs/lesson2.mdx",
+        "file:docs/lesson20.mdx",
+        "file:docs/lesson3.mdx",
+        "file:docs/lesson4.mdx",
+        "file:docs/lesson5.mdx",
+        "file:docs/lesson6.mdx",
+        "file:docs/lesson7.mdx",
+        "file:docs/lesson8.mdx",
+        "file:docs/lesson9.mdx",
+        "file:docs/topics.mdx",
+        "file:scripts/align-rst-tables.mjs"
+      ],
+      "wholeLayer": true,
+      "language": "markdown"
+    },
+    {
+      "id": "module:test",
+      "name": "Test",
+      "path": "",
+      "layerId": "layer:test",
+      "nodeIds": [
+        "file:.github/workflows/test.yml",
+        "file:src/remark/rstTable.drift-guard.test.ts",
+        "file:src/remark/rstTable.test.ts",
+        "file:src/remark/rstTableAst.test.ts",
+        "file:src/remark/rstTableParser.test.ts"
+      ],
+      "wholeLayer": true,
+      "language": "typescript"
+    }
+  ]
+}
