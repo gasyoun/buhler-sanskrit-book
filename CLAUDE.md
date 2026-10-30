@@ -1,11 +1,14 @@
 # CLAUDE.md
 
-_Created: 28-02-2026 · Last updated: 15-09-2026_
+_Created: 28-02-2026 · Last updated: 30-10-2026_
 
 `buhler-sanskrit-book` is a **Docusaurus 3** static site for Bühler's
-Sanskrit grammar — 20 lessons in Russian with Sanskrit examples — deployed
-to GitHub Pages at
-[gasyoun.github.io/buhler-sanskrit-book](https://gasyoun.github.io/buhler-sanskrit-book/).
+Sanskrit grammar — 20 lessons in Russian with Sanskrit examples — published
+on GitHub Pages at
+[alexander-myltsev.github.io/buhler-sanskrit-book](https://alexander-myltsev.github.io/buhler-sanskrit-book/)
+(`npm run deploy` targets the `alexander-myltsev/buhler-sanskrit-book`
+mirror per `docusaurus.config.ts`; Pages is not enabled on
+`gasyoun/buhler-sanskrit-book`).
 
 Org conventions live in [`../CLAUDE.md`](https://github.com/gasyoun/github-spine/blob/main/CLAUDE.md).
 Before encodings or corpus data, read the
@@ -49,8 +52,8 @@ TSV webpack import is wired in `docusaurus.config.ts`; types:
 - Do not hand-edit generated Docusaurus cache.
 - Do not fork a second dictionary parser — `Dictionary.tsx` + the four TSVs
   are the vocabulary path.
-- `sanskrit-util iast_to_devanagari` is broken; this site uses Sanscript
-  for display conversion.
+- `sanskrit-util iast_to_devanagari` was broken (fixed upstream per H1394);
+  this site still uses Sanscript for display conversion.
 
 Danger facts:
 [Uprava DANGER_FACTS.md](https://github.com/gasyoun/Uprava/blob/main/DANGER_FACTS.md)
