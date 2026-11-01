@@ -1,6 +1,6 @@
 # CLAUDE.md
 
-_Created: 28-02-2026 · Last updated: 30-10-2026_
+_Created: 28-02-2026 · Last updated: 01-11-2026 — H7274 claims pass: 5/5 npm scripts (start/build/typecheck/serve/deploy) + src/ present_
 
 `buhler-sanskrit-book` is a **Docusaurus 3** static site for Bühler's
 Sanskrit grammar — 20 lessons in Russian with Sanskrit examples — published
