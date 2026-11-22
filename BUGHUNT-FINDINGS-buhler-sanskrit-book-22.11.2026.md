@@ -46,7 +46,7 @@ This clone lives at `/Users/mac/Documents/GitHub/buhler-sanskrit-book`, and `cor
 - Negative control: in a worktree the hook correctly exits 0 (and must keep doing so).
 - Prior art: the Uprava original already fixed this exact defect in its own 26-09-2026 bughunt — [Uprava/.githooks/pre-commit](https://github.com/gasyoun/Uprava/blob/main/.githooks/pre-commit) adds `CANONICAL_MAIN_TREE_HOME="${HOME:-}/Documents/GitHub/<repo>"` (plus an env override) and blocks on a match against either. This repo's vendored copy predates/lacks it.
 
-**Disposition: HIGH CODE bug — auto-fixed in this run** (port of the Uprava crossbox `$HOME`-twin pattern; the `C:/…` literal stays for the Windows box, the `$HOME` twin covers macOS; positive control = hook blocks in the main tree, negative controls = worktree pass + `ALLOW_MAIN_TREE_COMMIT=1` pass). Fix landed as a separate PR off fresh `origin/main`; see the `[Unreleased]` CHANGELOG bullet "typecheck-crossbox main-tree guard".
+**Disposition: HIGH CODE bug — auto-fixed in this run** (port of the Uprava crossbox `$HOME`-twin pattern; the `C:/…` literal stays for the Windows box, the `$HOME` twin covers macOS; positive control = hook blocks in the main tree, negative controls = worktree pass + `ALLOW_MAIN_TREE_COMMIT=1` pass). Fix landed in [PR #34](https://github.com/gasyoun/buhler-sanskrit-book/pull/34) (merged 22-11-2026), verified live on attempt 1/3.
 
 ### 🟠 MEDIUM-1 — `npm run align` corrupts wrapped (multi-line) table cells
 
