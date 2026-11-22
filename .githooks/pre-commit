@@ -21,11 +21,28 @@ if [ -n "${ALLOW_MAIN_TREE_COMMIT:-}" ]; then
 fi
 
 CANONICAL_MAIN_TREE="C:/Users/user/Documents/GitHub/buhler-sanskrit-book"
+# Crossbox twin (bughunt HIGH-1, 22-11-2026; port of the Uprava original's own
+# bughunt fix of 26-09-2026): the canonical checkout lives at
+# $HOME/Documents/GitHub/buhler-sanskrit-book on the macOS box, and under
+# git-bash on Windows ${HOME} normalizes to the same string as the literal
+# above. Without this twin the guard ran on every commit of the macOS clone
+# and NEVER fired there — a silent no-op on one of the estate's two boxes.
+# ${HOME:-} keeps this correct even under set -u. The literal assignment above
+# stays on ONE line in exactly this shape: deploy tooling regex-substitutes it
+# when baking this hook into other guarded repos; the twin lives BELOW it so
+# that template match is never disturbed.
+CANONICAL_MAIN_TREE_HOME="${HOME:-}/Documents/GitHub/buhler-sanskrit-book"
+if [ -n "${BUHLER_CANONICAL_TREE:-}" ]; then
+    CANONICAL_MAIN_TREE="$BUHLER_CANONICAL_TREE"
+    CANONICAL_MAIN_TREE_HOME="$BUHLER_CANONICAL_TREE"
+fi
+
 toplevel="$(git rev-parse --show-toplevel 2>/dev/null || true)"
 norm_toplevel="$(printf '%s' "$toplevel" | tr 'A-Z' 'a-z' | tr '\\' '/')"
 norm_canonical="$(printf '%s' "$CANONICAL_MAIN_TREE" | tr 'A-Z' 'a-z' | tr '\\' '/')"
+norm_canonical_home="$(printf '%s' "$CANONICAL_MAIN_TREE_HOME" | tr 'A-Z' 'a-z' | tr '\\' '/')"
 
-if [ "$norm_toplevel" = "$norm_canonical" ]; then
+if [ "$norm_toplevel" = "$norm_canonical" ] || [ "$norm_toplevel" = "$norm_canonical_home" ]; then
     echo "" >&2
     echo "BLOCKED: direct commit in the shared main tree of this repo." >&2
     echo "" >&2
