@@ -19,6 +19,19 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
   report-only; 26/26 tests, `tsc`, `py_compile`, `node --check` green.
   Findings: [BUGHUNT-FINDINGS-buhler-sanskrit-book-22.11.2026.md](https://github.com/gasyoun/buhler-sanskrit-book/blob/main/BUGHUNT-FINDINGS-buhler-sanskrit-book-22.11.2026.md).
 
+### Fixed
+
+- **Main-tree commit guard now fires on macOS** (bughunt 22-11-2026 HIGH-1,
+  GLM 5.3 Flash `glm-5.3-flash`). `.githooks/pre-commit` carried only a
+  Windows-literal canonical path, so on the macOS clone (`core.hooksPath`
+  wired) the guard ran on every commit and never blocked — the
+  tree-intermix data-loss guard was a silent no-op on one of the estate's
+  two boxes. Fix: port of the Uprava original's crossbox `$HOME`-twin
+  (`CANONICAL_MAIN_TREE_HOME` + `BUHLER_CANONICAL_TREE` override), literal
+  assignment kept one-line for the deploy-regex shape. Verified live:
+  BLOCKED in the shared main tree; worktree / escape env / path override
+  all still pass.
+
 ## [0.1.2] - 2026-08-28
 
 ### Fixed
